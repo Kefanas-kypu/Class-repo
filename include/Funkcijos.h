@@ -1,0 +1,15 @@
+#pragma once
+#include "Studentas.h"
+#include <vector>
+#include <string>
+
+Studentas stud_iv();  
+Studentas generuoti_atsitiktini_studenta(); 
+void spausdinti_grupe(const std::vector<Studentas>& grupe);
+void surusiuoti_pagal_varda(std::vector<Studentas>& grupe);
+void skaityti_is_failo(std::vector<Studentas>& grupe, const std::string& failo_vardas);
+void generuoti_studentu_faila(long long n, int nd_count);
+StudentGroups padalinti_studentus(const std::vector<Studentas>& grupe);
+void strategija2_vector(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsiukai);
+void strategija3_optimizuota(const std::string& fail_name, long long n);
+void issaugoti_i_faila(const std::vector<Studentas>& grupe, const std::string& failo_vardas);

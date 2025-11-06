@@ -39,3 +39,9 @@
 
 # debug information files
 *.dwo
+<<<<<<< HEAD
+=======
+*.txt
+Naujas/
+*.md
+>>>>>>> f076b42 (v1.0 kopija)
