@@ -1,15 +1,20 @@
 #pragma once
-#include "Studentas.h"
+#include <iostream>
+#include <fstream>
 #include <vector>
+#include <list>
 #include <string>
+#include <algorithm>
+#include "Studentas.h"
 
-Studentas stud_iv();  
-Studentas generuoti_atsitiktini_studenta(); 
-void spausdinti_grupe(const std::vector<Studentas>& grupe);
-void surusiuoti_pagal_varda(std::vector<Studentas>& grupe);
-void skaityti_is_failo(std::vector<Studentas>& grupe, const std::string& failo_vardas);
-void generuoti_studentu_faila(long long n, int nd_count);
-StudentGroups padalinti_studentus(const std::vector<Studentas>& grupe);
-void strategija2_vector(std::vector<Studentas>& studentai, std::vector<Studentas>& vargsiukai);
-void strategija3_optimizuota(const std::string& fail_name, long long n);
-void issaugoti_i_faila(const std::vector<Studentas>& grupe, const std::string& failo_vardas);
+void spausdintiStudentus(const std::vector<Studentas>& studentai);
+void rusiavimas(std::vector<Studentas>& studentai);
+StudentGroups suskirstytiStudentus(const std::vector<Studentas>& studentai);
+
+void generuotiFaila(const std::string& failoPavadinimas, int kiek);
+std::vector<Studentas> nuskaitytiIsFailo(const std::string& failoPavadinimas);
+
+double skaiciuotiVidurki(const std::vector<int>& paz);
+void isvestiRezultatus(const std::vector<Studentas>& studentai, const std::string& failoPavadinimas);
+
+void testavimas(const std::string& failas);
