@@ -21,24 +21,31 @@ Class studento repozitorija
 
 ### Optimizavimo flag'ų palyginimas
 
-#### Struct versija (vector)
-
-| Optimizavimas | Failas             | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** | .exe dydis |
-|-------------- | ------------------ | ------------ | ----------- | ------------ | -------- | ------------------ | ----------- |
-| -O1           | studentai_100000   |              |             |              |          |                    |             |
-| -O1           | studentai_1000000  |              |             |              |          |                    |             |
-| -O2           | studentai_100000   |              |             |              |          |                    |             |
-| -O2           | studentai_1000000  |              |             |              |          |                    |             |
-| -O3           | studentai_100000   |              |             |              |          |                    |             |
-| -O3           | studentai_1000000  |              |             |              |          |                    |             |
-
 #### Class versija (vector)
 
-| Optimizavimas | Failas             | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** | .exe dydis |
-|-------------- | ------------------ | ------------ | ----------- | ------------ | -------- | ------------------ | ----------- |
-| -O1           | studentai_100000   |              |             |              |          |                    |             |
-| -O1           | studentai_1000000  |              |             |              |          |                    |             |
-| -O2           | studentai_100000   |              |             |              |          |                    |             |
-| -O2           | studentai_1000000  |              |             |              |          |                    |             |
-| -O3           | studentai_100000   |              |             |              |          |                    |             |
-| -O3           | studentai_1000000  |              |             |              |          |                    |             |
+
+### Optimizavimas: `-O1`
+
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 1.6896 s    | 0.0608 s   | 0.0250 s    | 0.6552 s | **2.4306 s**        |
+| studentai_1000000 | 16.8806 s   | 0.9298 s   | 0.2682 s    | 6.0148 s | **24.0936 s**       |
+
+
+### Optimizavimas: `-O2`
+
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 1.6835 s    | 0.0580 s   | 0.0255 s    | 0.6988 s | **2.4653 s**        |
+| studentai_1000000 | 17.0110 s   | 0.8783 s   | 0.2998 s    | 6.6080 s | **24.7968 s**       |
+
+
+### Optimizavimas: `-O3`
+
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 1.6880 s    | 0.0472 s   | 0.0224 s    | 0.5690 s | **2.3268 s**        |
+| studentai_1000000 | 17.0484 s   | 0.8498 s   | 0.2620 s    | 5.5288 s | **23.6886 s**       |
+
+### Struct versija (vector)
+

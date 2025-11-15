@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = @CMakeFiles/class_vector.dir/includes_CXX.rsp
 
-CXX_FLAGS = -std=gnu++17
+CXX_FLAGS = -O3 -std=gnu++17
 
