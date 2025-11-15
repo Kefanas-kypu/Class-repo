@@ -77,56 +77,19 @@ inline std::istream& Studentas::readStudent(std::istream& is) {
     nd_.clear();
     egzaminas_ = 0.0;
 
-    if (&is == &std::cin) {
-        std::cout << "Iveskite varda: ";
-        if (!(is >> vardas_)) return is;
-
-        std::cout << "Iveskite pavarde: ";
-        if (!(is >> pavarde_)) return is;
-
-        std::size_t kiek = 0;
-        std::cout << "Kiek namu darbu ivertinimu? ";
-        while (!(is >> kiek)) {
-            std::cout << "Neteisinga ivestis. Bandykite dar karta: ";
-            is.clear();
-            is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
-
-        nd_.reserve(kiek);
-        for (std::size_t i = 0; i < kiek; ++i) {
-            double pazymys;
-            std::cout << "ND: " << i + 1 << ": ";
-                        while (!(is >> pazymys) || pazymys < 0.0 || pazymys > 10.0) {
-                std::cout << "Iveskite reiksme nuo 0 iki 10: ";
-                is.clear();
-                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-            }
-            nd_.push_back(pazymys);
-        }
-
-        std::cout << "Egzamino ivertinimas: ";
-        while (!(is >> egzaminas_) || egzaminas_ < 0.0 || egzaminas_ > 10.0) {
-            std::cout << "Iveskite reiksme nuo 0 iki 10: ";
-            is.clear();
-            is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-        }
-
-        is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
-    } else {
-        // Skaitymas iš failo: "Vardas Pavarde nd1 nd2 ... ndN egz"
+    // === Jei duomenys skaitomi iš failo ===
+    if (&is != &std::cin) {
         if (!(is >> vardas_ >> pavarde_)) {
             is.setstate(std::ios::failbit);
             return is;
         }
 
-        std::string likusiDalis;
-        std::getline(is, likusiDalis);
-        std::istringstream pazStream(likusiDalis);
+        std::string likusi;
+        std::getline(is, likusi);
+        std::istringstream ss(likusi);
+        double x;
 
-        double pazymys;
-        while (pazStream >> pazymys) {
-            nd_.push_back(pazymys);
-        }
+        while (ss >> x) nd_.push_back(x);
 
         if (nd_.empty()) {
             is.setstate(std::ios::failbit);
@@ -135,10 +98,103 @@ inline std::istream& Studentas::readStudent(std::istream& is) {
 
         egzaminas_ = nd_.back();
         nd_.pop_back();
+        return is;
+    }
+
+    // === Interaktyvus režimas ===
+    std::cout << "Iveskite studento duomenis" << std::endl;
+
+    std::cout << "Vardas: ";
+    is >> vardas_;
+
+    std::cout << "Pavarde: ";
+    is >> pavarde_;
+
+    int generuoti = 0;
+    std::cout << "Ar pazymius generuoti atsitiktinai? (1 - taip, 0 - ne): ";
+    while (!(is >> generuoti) || (generuoti != 0 && generuoti != 1)) {
+        std::cout << "Iveskite 1 arba 0: ";
+        is.clear();
+        is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+    }
+
+    if (generuoti == 1) {
+        // === AUTOMATINĖ GENERACIJA ===
+        int kiek = rand() % 10 + 1; // 1–10 ND
+        nd_.reserve(kiek);
+
+        for (int i = 0; i < kiek; i++) {
+            int r = rand() % 10 + 1;
+            nd_.push_back(r);
+        }
+
+        egzaminas_ = rand() % 10 + 1;
+
+        std::cout << "Sugeneruota " << kiek << " ND ir egzaminas." << std::endl;
+    } 
+    else {
+        // === NEŽINAU KIEK ND REŽIMAS ===
+        int zinauKiek = 0;
+        std::cout << "Ar zinote, kiek pazymiu turi studentas? (1 - taip, 0 - ne): ";
+        while (!(is >> zinauKiek) || (zinauKiek != 0 && zinauKiek != 1)) {
+            std::cout << "Iveskite 1 arba 0: ";
+            is.clear();
+            is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
+
+        if (zinauKiek == 1) {
+            // === TIKSLUS KIEKIS ===
+            int kiek;
+            std::cout << "Kiek pazymiu? ";
+            while (!(is >> kiek) || kiek < 0) {
+                std::cout << "Iveskite teigiama skaiciu: ";
+                is.clear();
+                is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+            }
+
+            nd_.reserve(kiek);
+            for (int i = 0; i < kiek; i++) {
+                double paz;
+                std::cout << i + 1 << ": ";
+                while (!(is >> paz) || paz < 0 || paz > 10) {
+                    std::cout << "Iveskite skaiciu: ";
+                    is.clear();
+                    is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                }
+                nd_.push_back(paz);
+            }
+        } 
+        else {
+            // === VEDIMAS IKI 0 ===
+            double paz = -1;
+            std::cout << "Veskite pazymius (0 - baigti):" << std::endl;
+
+            while (true) {
+                std::cout << "Pazymys: ";
+                while (!(is >> paz) || paz < 0 || paz > 10) {
+                    std::cout << "Iveskite skaiciu: ";
+                    is.clear();
+                    is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                }
+
+                if (paz == 0) break;
+
+                nd_.push_back(paz);
+            }
+        }
+
+        // Egzaminas
+        std::cout << "Iveskite egzamino pazymi: ";
+        while (!(is >> egzaminas_) || egzaminas_ < 0 || egzaminas_ > 10) {
+            std::cout << "Neteisinga reiksme. Iveskite: ";
+            is.clear();
+            is.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
 
     return is;
 }
+
 
 inline double Studentas::vidurkis(const std::vector<double>& paz) {
     return skaiciuotiVidurki(paz);

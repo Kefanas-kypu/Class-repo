@@ -44,6 +44,7 @@ int main() {
             s.readStudent(cin);
             grupe.push_back(s);
             cout << "Studentas pridetas sekmingai!" << endl;
+            cout << "Objekto adresas: " << &s << std::endl;
             break;
         }
 
