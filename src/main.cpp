@@ -8,6 +8,7 @@
 #include <ctime>
 #include <list>
 #include <chrono>
+#include <limits>
 
 using namespace std;
 
@@ -28,7 +29,13 @@ int main() {
         cout << "6. Padalinti studentus i grupes ir issaugoti i failus" << endl;
         cout << "7. Testuoti veikima su ivairaus dydzio failais" << endl;
         cout << "Pasirinkite veiksma: ";
-        cin >> pasirinkimas;
+
+        if (!(cin >> pasirinkimas)) {
+            cout << "Neteisinga ivestis, bandykite dar karta." << endl;
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
+        }
 
         switch (pasirinkimas) {
 
@@ -57,59 +64,100 @@ int main() {
         case 4: {
             cout << "Iveskite failo pavadinima: ";
             cin >> fail;
-
-            auto start = chrono::high_resolution_clock::now();
             grupe = nuskaitytiIsFailo(fail);
-            auto end = chrono::high_resolution_clock::now();
-
-            double laikas = chrono::duration<double>(end - start).count();
-            cout << "Duomenu nuskaitymas uztruko: " << laikas << " s" << endl;
             break;
         }
 
         case 5: {
-            int kiek;
-            cout << "Kiek studentu sugeneruoti? ";
+            string failoPav;
+            int kiek, nd;
+            cout << "Kiek studentu generuoti? ";
             cin >> kiek;
-            generuotiFaila("studentai_" + to_string(kiek) + ".txt", kiek);
+            cout << "Iveskite, kiek studentas turi pazymiu: ";
+            cin >> nd;
+            generuotiFaila(nd, kiek);
             break;
         }
 
         case 6: {
-            cout << "Iveskite failo pavadinima: ";
-            cin >> fail;
+            std::cout << "Iveskite failo pavadinima, kuri norite dalinti: ";
+            std::cin >> fail;
 
+            std::vector<Studentas> grupe;
             grupe = nuskaitytiIsFailo(fail);
+
             if (grupe.empty()) {
-                cout << "Failas tuscias arba nepavyko nuskaityti." << endl;
+                std::cout << "Nera studentu faile arba nepavyko nuskaityti." << std::endl;
                 break;
             }
 
-            auto start = chrono::high_resolution_clock::now();
-            StudentGroups grupes = suskirstytiStudentus(grupe);
-            auto end = chrono::high_resolution_clock::now();
+            int rusiavimas;
+            std::cout << "Pagal ka rusiuoti studentus? (1 - pagal varda, 0 - pagal galutini bala): ";
+            std::cin >> rusiavimas;
 
-            double laikas = chrono::duration<double>(end - start).count();
+            auto start_rusiavimas = std::chrono::high_resolution_clock::now();
 
-            isvestiRezultatus(grupes.kietiakiai, "kietiakiai.txt");
-            isvestiRezultatus(grupes.vargsiukai, "vargsiukai.txt");
+            StudentGroups groups = suskirstytiStudentus(grupe);
 
-            cout << "Padalinta ir issaugota per: " << laikas << " s" << endl;
+            if (rusiavimas == 1) {
+                std::sort(groups.kietiakiai.begin(), groups.kietiakiai.end(),
+                    [](const Studentas& a, const Studentas& b) {
+                        return a.vardas() < b.vardas();
+                    }
+                );
+                std::sort(groups.vargsiukai.begin(), groups.vargsiukai.end(),
+                    [](const Studentas& a, const Studentas& b) {
+                        return a.vardas() < b.vardas();
+                    }
+                );
+            } else {
+                std::sort(groups.kietiakiai.begin(), groups.kietiakiai.end(),
+                    [](const Studentas& a, const Studentas& b) {
+                        return a.galBalas(Studentas::vidurkis) > b.galBalas(Studentas::vidurkis);
+                    }
+                );
+                std::sort(groups.vargsiukai.begin(), groups.vargsiukai.end(),
+                    [](const Studentas& a, const Studentas& b) {
+                        return a.galBalas(Studentas::vidurkis) > b.galBalas(Studentas::vidurkis);
+                    }
+                );
+            }
+
+            auto end_rusiavimas = std::chrono::high_resolution_clock::now();
+            double laikas_rusiavimas = std::chrono::duration<double>(end_rusiavimas - start_rusiavimas).count();
+
+            size_t pos1 = fail.find_last_of('_');
+            size_t pos2 = fail.find_last_of('.');
+            std::string number = (pos1 != std::string::npos && pos2 != std::string::npos && pos2 > pos1)
+                                ? fail.substr(pos1 + 1, pos2 - pos1 - 1)
+                                : "output";
+
+            auto start_irasymas = std::chrono::high_resolution_clock::now();
+
+            isvestiRezultatus(groups.kietiakiai, "kietiakiai_" + number + ".txt");
+            isvestiRezultatus(groups.vargsiukai, "vargsiukai_" + number + ".txt");
+
+            auto end_irasymas = std::chrono::high_resolution_clock::now();
+            double laikas_irasymas = std::chrono::duration<double>(end_irasymas - start_irasymas).count();
+
+            std::cout << "Studentai issaugoti i kietiakiai_" << number
+                     << ".txt ir vargsiukai_" << number << ".txt" << std::endl;
+
+            std::cout << std::fixed << std::setprecision(3);
+            std::cout << "Rusiavimo laikas: " << laikas_rusiavimas << " s" << std::endl;
+            std::cout << "Irasymo i faila laikas: " << laikas_irasymas << " s" << std::endl;
             break;
         }
 
         case 7: {
-            vector<int> dydziai = {1000, 10000, 100000};
-            for (int n : dydziai) {
-                cout << "\n--- Testas su failu studentai_" << n << ".txt ---" << endl;
-                generuotiFaila("studentai_" + to_string(n) + ".txt", n);
-                testavimas("studentai_" + to_string(n) + ".txt");
-            }
+            cout << "Vykdomas testavimas..." << endl;
+            testavimas();
             break;
         }
 
         default:
-            cout << "Neteisingas pasirinkimas!" << endl;
+            cout << "Tokio pasirinkimo nera!" << endl;
+            break;
         }
 
     } while (pasirinkimas != 3);
