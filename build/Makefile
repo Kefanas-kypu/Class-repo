@@ -56,10 +56,10 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag
+CMAKE_SOURCE_DIR = C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build
+CMAKE_BINARY_DIR = C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -116,37 +116,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Studentai_vector
+# Target rules for targets named class_vector
 
 # Build rule for target.
-Studentai_vector: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Studentai_vector
-.PHONY : Studentai_vector
+class_vector: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 class_vector
+.PHONY : class_vector
 
 # fast build rule for target.
-Studentai_vector/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/build
-.PHONY : Studentai_vector/fast
-
-#=============================================================================
-# Target rules for targets named Studentai_list
-
-# Build rule for target.
-Studentai_list: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Studentai_list
-.PHONY : Studentai_list
-
-# fast build rule for target.
-Studentai_list/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/build
-.PHONY : Studentai_list/fast
+class_vector/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/build
+.PHONY : class_vector/fast
 
 src/Funkcijos.obj: src/Funkcijos.cpp.obj
 .PHONY : src/Funkcijos.obj
 
 # target to build an object file
 src/Funkcijos.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/src/Funkcijos.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj
 .PHONY : src/Funkcijos.cpp.obj
 
 src/Funkcijos.i: src/Funkcijos.cpp.i
@@ -154,7 +141,7 @@ src/Funkcijos.i: src/Funkcijos.cpp.i
 
 # target to preprocess a source file
 src/Funkcijos.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/src/Funkcijos.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/Funkcijos.cpp.i
 .PHONY : src/Funkcijos.cpp.i
 
 src/Funkcijos.s: src/Funkcijos.cpp.s
@@ -162,39 +149,15 @@ src/Funkcijos.s: src/Funkcijos.cpp.s
 
 # target to generate assembly for a file
 src/Funkcijos.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/src/Funkcijos.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/Funkcijos.cpp.s
 .PHONY : src/Funkcijos.cpp.s
-
-src/Funkcijos_list.obj: src/Funkcijos_list.cpp.obj
-.PHONY : src/Funkcijos_list.obj
-
-# target to build an object file
-src/Funkcijos_list.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/src/Funkcijos_list.cpp.obj
-.PHONY : src/Funkcijos_list.cpp.obj
-
-src/Funkcijos_list.i: src/Funkcijos_list.cpp.i
-.PHONY : src/Funkcijos_list.i
-
-# target to preprocess a source file
-src/Funkcijos_list.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/src/Funkcijos_list.cpp.i
-.PHONY : src/Funkcijos_list.cpp.i
-
-src/Funkcijos_list.s: src/Funkcijos_list.cpp.s
-.PHONY : src/Funkcijos_list.s
-
-# target to generate assembly for a file
-src/Funkcijos_list.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/src/Funkcijos_list.cpp.s
-.PHONY : src/Funkcijos_list.cpp.s
 
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
 # target to build an object file
 src/main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/src/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/main.cpp.obj
 .PHONY : src/main.cpp.obj
 
 src/main.i: src/main.cpp.i
@@ -202,7 +165,7 @@ src/main.i: src/main.cpp.i
 
 # target to preprocess a source file
 src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/src/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/main.cpp.i
 .PHONY : src/main.cpp.i
 
 src/main.s: src/main.cpp.s
@@ -210,32 +173,8 @@ src/main.s: src/main.cpp.s
 
 # target to generate assembly for a file
 src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/src/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
-
-src/v0.3.obj: src/v0.3.cpp.obj
-.PHONY : src/v0.3.obj
-
-# target to build an object file
-src/v0.3.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/src/v0.3.cpp.obj
-.PHONY : src/v0.3.cpp.obj
-
-src/v0.3.i: src/v0.3.cpp.i
-.PHONY : src/v0.3.i
-
-# target to preprocess a source file
-src/v0.3.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/src/v0.3.cpp.i
-.PHONY : src/v0.3.cpp.i
-
-src/v0.3.s: src/v0.3.cpp.s
-.PHONY : src/v0.3.s
-
-# target to generate assembly for a file
-src/v0.3.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/src/v0.3.cpp.s
-.PHONY : src/v0.3.cpp.s
 
 # Help Target
 help:
@@ -245,20 +184,13 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Studentai_list
-	@echo ... Studentai_vector
+	@echo ... class_vector
 	@echo ... src/Funkcijos.obj
 	@echo ... src/Funkcijos.i
 	@echo ... src/Funkcijos.s
-	@echo ... src/Funkcijos_list.obj
-	@echo ... src/Funkcijos_list.i
-	@echo ... src/Funkcijos_list.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
-	@echo ... src/v0.3.obj
-	@echo ... src/v0.3.i
-	@echo ... src/v0.3.s
 .PHONY : help
 
 

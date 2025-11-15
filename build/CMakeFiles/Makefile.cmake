@@ -39,7 +39,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-4.2/Modules/Platform/WindowsPaths.cmake"
-  "C:/Users/Kompiuteris/Downloads/Naujas_isgit/Naujas-Naujas_tag/CMakeLists.txt"
+  "C:/Users/Kompiuteris/Downloads/Naujas_isgit/Class-repo/CMakeLists.txt"
   "CMakeFiles/4.2.0-rc2/CMakeCCompiler.cmake"
   "CMakeFiles/4.2.0-rc2/CMakeCXXCompiler.cmake"
   "CMakeFiles/4.2.0-rc2/CMakeRCCompiler.cmake"
@@ -59,6 +59,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/Studentai_vector.dir/DependInfo.cmake"
-  "CMakeFiles/Studentai_list.dir/DependInfo.cmake"
+  "CMakeFiles/class_vector.dir/DependInfo.cmake"
   )

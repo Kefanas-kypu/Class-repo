@@ -53,22 +53,20 @@ RM = "C:\Program Files\CMake\bin\cmake.exe" -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag
+CMAKE_SOURCE_DIR = C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build
+CMAKE_BINARY_DIR = C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build
 
 #=============================================================================
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/Studentai_vector.dir/all
-all: CMakeFiles/Studentai_list.dir/all
+all: CMakeFiles/class_vector.dir/all
 .PHONY : all
 
 # The main recursive "codegen" target.
-codegen: CMakeFiles/Studentai_vector.dir/codegen
-codegen: CMakeFiles/Studentai_list.dir/codegen
+codegen: CMakeFiles/class_vector.dir/codegen
 .PHONY : codegen
 
 # The main recursive "preinstall" target.
@@ -76,73 +74,40 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/Studentai_vector.dir/clean
-clean: CMakeFiles/Studentai_list.dir/clean
+clean: CMakeFiles/class_vector.dir/clean
 .PHONY : clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/Studentai_vector.dir
+# Target rules for target CMakeFiles/class_vector.dir
 
 # All Build rule for target.
-CMakeFiles/Studentai_vector.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles --progress-num=4,5,6 "Built target Studentai_vector"
-.PHONY : CMakeFiles/Studentai_vector.dir/all
+CMakeFiles/class_vector.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=1,2,3 "Built target class_vector"
+.PHONY : CMakeFiles/class_vector.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/Studentai_vector.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Studentai_vector.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles 0
-.PHONY : CMakeFiles/Studentai_vector.dir/rule
+CMakeFiles/class_vector.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles 3
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/class_vector.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles 0
+.PHONY : CMakeFiles/class_vector.dir/rule
 
 # Convenience name for target.
-Studentai_vector: CMakeFiles/Studentai_vector.dir/rule
-.PHONY : Studentai_vector
+class_vector: CMakeFiles/class_vector.dir/rule
+.PHONY : class_vector
 
 # codegen rule for target.
-CMakeFiles/Studentai_vector.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles --progress-num=4,5,6 "Finished codegen for target Studentai_vector"
-.PHONY : CMakeFiles/Studentai_vector.dir/codegen
+CMakeFiles/class_vector.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target class_vector"
+.PHONY : CMakeFiles/class_vector.dir/codegen
 
 # clean rule for target.
-CMakeFiles/Studentai_vector.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_vector.dir\build.make CMakeFiles/Studentai_vector.dir/clean
-.PHONY : CMakeFiles/Studentai_vector.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/Studentai_list.dir
-
-# All Build rule for target.
-CMakeFiles/Studentai_list.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles --progress-num=1,2,3 "Built target Studentai_list"
-.PHONY : CMakeFiles/Studentai_list.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/Studentai_list.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles 3
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/Studentai_list.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles 0
-.PHONY : CMakeFiles/Studentai_list.dir/rule
-
-# Convenience name for target.
-Studentai_list: CMakeFiles/Studentai_list.dir/rule
-.PHONY : Studentai_list
-
-# codegen rule for target.
-CMakeFiles/Studentai_list.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Naujas-Naujas_tag\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target Studentai_list"
-.PHONY : CMakeFiles/Studentai_list.dir/codegen
-
-# clean rule for target.
-CMakeFiles/Studentai_list.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Studentai_list.dir\build.make CMakeFiles/Studentai_list.dir/clean
-.PHONY : CMakeFiles/Studentai_list.dir/clean
+CMakeFiles/class_vector.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/clean
+.PHONY : CMakeFiles/class_vector.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
