@@ -7,21 +7,16 @@ Class studento repozitorija
 
 | Failas             | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
 | ------------------ | ------------ | ----------- | ------------ | -------- | ------------------ |
-| studentai_1000     | 0.005        | 0.001       | 0.000        | 0.009    | **0.015**          |
-| studentai_10000    | 0.022        | 0.018       | 0.005        | 0.066    | **0.110**          |
 | studentai_100000   | 0.203        | 0.235       | 0.047        | 0.623    | **1.106**          |
 | studentai_1000000  | 1.996        | 3.073       | 0.513        | 5.796    | **11.574**         |
-| studentai_10000000 | 21.078       | 38.997      | 4.927        | 48.976   | **113.979**        |
+
 
 #### Class
 
-| Failas             | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
-| ------------------ | ------------ | ----------- | ------------ | -------- | ------------------ |
-| studentai_1000     |              |             |              |          |                    |
-| studentai_10000    |              |             |              |          |                    |
-| studentai_100000   |              |             |              |          |                    |
-| studentai_1000000  |              |             |              |          |                    |
-| studentai_10000000 |              |             |              |          |                    |
+| Failas           | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000 | 1.8058 s    | 0.4484 s   | 0.0518 s    | 0.7406 s | **3.0464 s**        |
+| studentai_1000000| 18.1778 s   | 5.8564 s   | 0.6142 s    | 6.1636 s | **30.8118 s**       |
 
 
 ### Optimizavimo flag'ų palyginimas

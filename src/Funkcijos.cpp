@@ -125,7 +125,7 @@ void isvestiRezultatus(const std::vector<Studentas>& studentai,
 }
 
 void testavimas() {
-    std::vector<long long> sizes = {1000, 10000, 100000, 1000000, 10000000};
+    std::vector<long long> sizes = {100000, 1000000};
     std::cout << std::fixed << std::setprecision(3);
 
     for (auto n : sizes) {
