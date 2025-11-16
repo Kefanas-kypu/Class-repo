@@ -84,12 +84,12 @@ clean: CMakeFiles/class_vector.dir/clean
 CMakeFiles/class_vector.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=1,2,3 "Built target class_vector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=1,2,3,4 "Built target class_vector"
 .PHONY : CMakeFiles/class_vector.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/class_vector.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles 3
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles 4
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CMakeFiles/class_vector.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles 0
 .PHONY : CMakeFiles/class_vector.dir/rule
@@ -101,7 +101,7 @@ class_vector: CMakeFiles/class_vector.dir/rule
 # codegen rule for target.
 CMakeFiles/class_vector.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=1,2,3 "Finished codegen for target class_vector"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target class_vector"
 .PHONY : CMakeFiles/class_vector.dir/codegen
 
 # clean rule for target.

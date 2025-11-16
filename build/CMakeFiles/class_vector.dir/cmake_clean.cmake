@@ -1,6 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj"
   "CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj.d"
+  "CMakeFiles/class_vector.dir/src/Studentas.cpp.obj"
+  "CMakeFiles/class_vector.dir/src/Studentas.cpp.obj.d"
   "CMakeFiles/class_vector.dir/src/main.cpp.obj"
   "CMakeFiles/class_vector.dir/src/main.cpp.obj.d"
   "class_vector.exe"

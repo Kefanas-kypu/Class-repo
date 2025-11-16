@@ -152,6 +152,30 @@ src/Funkcijos.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/Funkcijos.cpp.s
 .PHONY : src/Funkcijos.cpp.s
 
+src/Studentas.obj: src/Studentas.cpp.obj
+.PHONY : src/Studentas.obj
+
+# target to build an object file
+src/Studentas.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/Studentas.cpp.obj
+.PHONY : src/Studentas.cpp.obj
+
+src/Studentas.i: src/Studentas.cpp.i
+.PHONY : src/Studentas.i
+
+# target to preprocess a source file
+src/Studentas.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/Studentas.cpp.i
+.PHONY : src/Studentas.cpp.i
+
+src/Studentas.s: src/Studentas.cpp.s
+.PHONY : src/Studentas.s
+
+# target to generate assembly for a file
+src/Studentas.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\class_vector.dir\build.make CMakeFiles/class_vector.dir/src/Studentas.cpp.s
+.PHONY : src/Studentas.cpp.s
+
 src/main.obj: src/main.cpp.obj
 .PHONY : src/main.obj
 
@@ -188,6 +212,9 @@ help:
 	@echo ... src/Funkcijos.obj
 	@echo ... src/Funkcijos.i
 	@echo ... src/Funkcijos.s
+	@echo ... src/Studentas.obj
+	@echo ... src/Studentas.i
+	@echo ... src/Studentas.s
 	@echo ... src/main.obj
 	@echo ... src/main.i
 	@echo ... src/main.s
