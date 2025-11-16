@@ -56,3 +56,34 @@ Class studento repozitorija
 
 ### Struct versija (vector)
 
+### EXE failo dydžių palyginimas (Struct versija, Studentai_vector)
+
+| Versija | Flag'as | EXE dydis (KB) |
+|--------|---------|----------------|
+| struct | -O1     | ~329.6 KB      |
+| struct | -O2     | ~321.5 KB      |
+| struct | -O3     | ~390.9 KB      |
+
+
+### Struct versija (Studentai_vector) – optimizavimas `-O1`
+
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 0.2046 s    | 0.0398 s   | 0.0390 s    | 0.9118 s | **1.1948 s**        |
+| studentai_1000000 | 1.7640 s    | 0.3708 s   | 0.3268 s    | 5.5450 s | **8.0062 s**        |
+
+
+### Struct versija (Studentai_vector) – optimizavimas `-O2`
+
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 0.1972 s    | 0.0456 s   | 0.0414 s    | 0.9398 s | **1.2242 s**        |
+| studentai_1000000 | 2.0266 s    | 0.4896 s   | 0.3746 s    | 6.2920 s | **9.1828 s**        |
+
+
+### Struct versija (Studentai_vector) – optimizavimas `-O3`
+
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 0.1692 s    | 0.0360 s   | 0.0424 s    | 0.7458 s | **0.9934 s**        |
+| studentai_1000000 | 1.7014 s    | 0.3724 s   | 0.3296 s    | 5.4842 s | **7.8880 s**        |
