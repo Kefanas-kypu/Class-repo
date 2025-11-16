@@ -23,6 +23,13 @@ Class studento repozitorija
 
 #### Class versija (vector)
 
+### EXE failo dydžių palyginimas su class
+
+| Versija | Flag'as | EXE dydis (KB) |
+|--------|---------|----------------|
+| class  | -O1     | ~270.0 KB      |
+| class  | -O2     | ~256.5 KB      |
+| class  | -O3     | ~343.8 KB      |
 
 ### Optimizavimas: `-O1`
 
