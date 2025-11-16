@@ -52,6 +52,12 @@ public:
     friend std::ostream& operator<<(std::ostream& out, const Studentas& s);
 };
 
+// Grupės struktūra
+struct StudentGroups {
+    std::vector<Studentas> kietiakiai;
+    std::vector<Studentas> vargsiukai;
+};
+
 // Lyginimo funkcijos
 bool compare(const Studentas& a, const Studentas& b);
 bool comparePagalPavarde(const Studentas& a, const Studentas& b);
