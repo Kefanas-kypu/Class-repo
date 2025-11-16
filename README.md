@@ -1,5 +1,4 @@
-# Class-repo
-Class studento repozitorija
+# Class studento repozitorija
 
 ### Class ir struct implimentacijų palyginimas be optimizavimo ir su optimizavimu
 
@@ -7,7 +6,7 @@ Class studento repozitorija
 
 ### EXE failo dydžių palyginimas 
 
-| Versija | Flag'as | EXE dydis (KB) |
+| Versija | Flag'as | EXE dydis     |
 |--------|---------|----------------|
 | struct | -O1     | ~329.6 KB      |
 | struct | -O2     | ~321.5 KB      |
@@ -18,8 +17,8 @@ Class studento repozitorija
 
 | Failas             | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
 | ------------------ | ------------ | ----------- | ------------ | -------- | ------------------ |
-| studentai_100000   | 0.203        | 0.235       | 0.047        | 0.623    | **1.106**          |
-| studentai_1000000  | 1.996        | 3.073       | 0.513        | 5.796    | **11.574**         |
+| studentai_100000   | 0.203 s       | 0.235 s      | 0.047 s       | 0.623 s   | **1.106 s**          |
+| studentai_1000000  | 1.996 s       | 3.073 s      | 0.513 s       | 5.796 s   | **11.574 s**         |
 
 
 ### Optimizavimas `-O1`
@@ -50,7 +49,7 @@ Class studento repozitorija
 
 ### EXE failo dydžių palyginimas su class
 
-| Versija | Flag'as | EXE dydis (KB) |
+| Versija | Flag'as | EXE dydis     |
 |--------|---------|----------------|
 | class  | -O1     | ~270.0 KB      |
 | class  | -O2     | ~256.5 KB      |
@@ -91,4 +90,4 @@ Class studento repozitorija
 
 ### Optimizavimo flag'ų palyginimas
 
-Struct versija su std::vector yra akivaizdžiai spartesnė už class versiją visuose optimizacijos būduose. Iš optimizavimo flag’ų praktiškai geriausi rezultatai gauti su -O3. Apskritai naudoti optimizacijos būdai yra greitesni už paprastą naudojimą be optimizacijos, nes jie leidžia kompiliatoriui agresyviau optimizuoti kodą ir sumažinti vykdymo laiką, ypač dirbant su dideliais duomenų failais.
+Struct versija su vector yra akivaizdžiai spartesnė už class versiją visuose optimizacijos būduose. Iš optimizavimo flag’ų praktiškai greičiausi rezultatai gauti su -O3. Taip pat galime pastebėti, kad greitis nepriklauso nuo failų dydžių. Apskritai naudoti optimizacijos būdai yra greitesni už paprastą naudojimą be optimizacijos, nes jie leidžia kompiliatoriui agresyviau optimizuoti kodą ir sumažinti vykdymo laiką, ypač dirbant su dideliais duomenų failais.
