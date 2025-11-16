@@ -1,9 +1,20 @@
 # Class-repo
 Class studento repozitorija
 
-### Class ir struct implimentacijų palyginimas be optimizavimo
+### Class ir struct implimentacijų palyginimas be optimizavimo ir su optimizavimu
 
-#### Struct su vektoriumi
+## Struct analizė
+
+### EXE failo dydžių palyginimas 
+
+| Versija | Flag'as | EXE dydis (KB) |
+|--------|---------|----------------|
+| struct | -O1     | ~329.6 KB      |
+| struct | -O2     | ~321.5 KB      |
+| struct | -O3     | ~390.9 KB      |
+
+
+### Struct su vektoriumi
 
 | Failas             | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
 | ------------------ | ------------ | ----------- | ------------ | -------- | ------------------ |
@@ -11,17 +22,31 @@ Class studento repozitorija
 | studentai_1000000  | 1.996        | 3.073       | 0.513        | 5.796    | **11.574**         |
 
 
-#### Class
+### Optimizavimas `-O1`
 
-| Failas           | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
-|------------------|-------------|------------|-------------|----------|---------------------|
-| studentai_100000 | 1.8058 s    | 0.4484 s   | 0.0518 s    | 0.7406 s | **3.0464 s**        |
-| studentai_1000000| 18.1778 s   | 5.8564 s   | 0.6142 s    | 6.1636 s | **30.8118 s**       |
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 0.2046 s    | 0.0398 s   | 0.0390 s    | 0.9118 s | **1.1948 s**        |
+| studentai_1000000 | 1.7640 s    | 0.3708 s   | 0.3268 s    | 5.5450 s | **8.0062 s**        |
 
 
-### Optimizavimo flag'ų palyginimas
+### Optimizavimas `-O2`
 
-#### Class versija (vector)
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 0.1972 s    | 0.0456 s   | 0.0414 s    | 0.9398 s | **1.2242 s**        |
+| studentai_1000000 | 2.0266 s    | 0.4896 s   | 0.3746 s    | 6.2920 s | **9.1828 s**        |
+
+
+### Optimizavimas `-O3`
+
+| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|-------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000  | 0.1692 s    | 0.0360 s   | 0.0424 s    | 0.7458 s | **0.9934 s**        |
+| studentai_1000000 | 1.7014 s    | 0.3724 s   | 0.3296 s    | 5.4842 s | **7.8880 s**        |
+
+
+## Class analizė 
 
 ### EXE failo dydžių palyginimas su class
 
@@ -30,6 +55,15 @@ Class studento repozitorija
 | class  | -O1     | ~270.0 KB      |
 | class  | -O2     | ~256.5 KB      |
 | class  | -O3     | ~343.8 KB      |
+
+
+### Class su vektoriumi
+
+| Failas           | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000 | 1.8058 s    | 0.4484 s   | 0.0518 s    | 0.7406 s | **3.0464 s**        |
+| studentai_1000000| 18.1778 s   | 5.8564 s   | 0.6142 s    | 6.1636 s | **30.8118 s**       |
+
 
 ### Optimizavimas: `-O1`
 
@@ -54,36 +88,7 @@ Class studento repozitorija
 | studentai_100000  | 1.6880 s    | 0.0472 s   | 0.0224 s    | 0.5690 s | **2.3268 s**        |
 | studentai_1000000 | 17.0484 s   | 0.8498 s   | 0.2620 s    | 5.5288 s | **23.6886 s**       |
 
-### Struct versija (vector)
 
-### EXE failo dydžių palyginimas (Struct versija, Studentai_vector)
+### Optimizavimo flag'ų palyginimas
 
-| Versija | Flag'as | EXE dydis (KB) |
-|--------|---------|----------------|
-| struct | -O1     | ~329.6 KB      |
-| struct | -O2     | ~321.5 KB      |
-| struct | -O3     | ~390.9 KB      |
-
-
-### Struct versija (Studentai_vector) – optimizavimas `-O1`
-
-| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
-|-------------------|-------------|------------|-------------|----------|---------------------|
-| studentai_100000  | 0.2046 s    | 0.0398 s   | 0.0390 s    | 0.9118 s | **1.1948 s**        |
-| studentai_1000000 | 1.7640 s    | 0.3708 s   | 0.3268 s    | 5.5450 s | **8.0062 s**        |
-
-
-### Struct versija (Studentai_vector) – optimizavimas `-O2`
-
-| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
-|-------------------|-------------|------------|-------------|----------|---------------------|
-| studentai_100000  | 0.1972 s    | 0.0456 s   | 0.0414 s    | 0.9398 s | **1.2242 s**        |
-| studentai_1000000 | 2.0266 s    | 0.4896 s   | 0.3746 s    | 6.2920 s | **9.1828 s**        |
-
-
-### Struct versija (Studentai_vector) – optimizavimas `-O3`
-
-| Failas            | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
-|-------------------|-------------|------------|-------------|----------|---------------------|
-| studentai_100000  | 0.1692 s    | 0.0360 s   | 0.0424 s    | 0.7458 s | **0.9934 s**        |
-| studentai_1000000 | 1.7014 s    | 0.3724 s   | 0.3296 s    | 5.4842 s | **7.8880 s**        |
+Struct versija su std::vector yra akivaizdžiai spartesnė už class versiją visuose optimizacijos būduose. Iš optimizavimo flag’ų praktiškai geriausi rezultatai gauti su -O3. Apskritai naudoti optimizacijos būdai yra greitesni už paprastą naudojimą be optimizacijos, nes jie leidžia kompiliatoriui agresyviau optimizuoti kodą ir sumažinti vykdymo laiką, ypač dirbant su dideliais duomenų failais.
