@@ -1,5 +1,4 @@
 #include "Funkcijos.h"
-
 #include <chrono>
 #include <iomanip>
 #include <random>

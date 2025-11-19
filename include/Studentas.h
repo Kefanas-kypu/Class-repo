@@ -12,9 +12,6 @@ private:
     double egzaminas_;
 
 public:
-    // ============================
-    //        RULE OF THREE
-    // ============================
 
     Studentas();                                      // Default konstruktorius
     Studentas(const Studentas& other);                // Copy konstruktorius
