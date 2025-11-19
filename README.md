@@ -15,7 +15,7 @@ Dabartinėje versijoje `Studentas` yra pilnai įgyvendintos **class** funkcijos:
 
 ---
 
-# Studentas klasė
+## Studentas klasė
 
 ## Rule of Three
 
@@ -104,3 +104,4 @@ Išvesties formatas:
 - v1.2 testavimas veikia greičiau nei v1.1
 - Didžiausią laiko dalį užima Nuskaitymas bei įrašymas
 - darbe tinkamai realizuoti kopijavimo konstruktorius, kopijavimo operatorius bei destruktorius
+- v1.2 kodo struktūra praktiškesnė ateities versijoms.
