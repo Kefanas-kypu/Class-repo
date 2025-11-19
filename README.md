@@ -1,5 +1,4 @@
 # Studentų Rūšiavimo Sistema — v1.2  
-*C++ OOP projektas su „Rule of Three“ ir perkrautais operatoriais*
 
 ---
 
@@ -63,28 +62,35 @@ Sistema sugeneruoja:
 
 ### 3. Skaitymas iš failo  
 
-Vardas1 Pavarde1 1 1 1 8 4 4
-Vardas2 Pavarde2 1 4 8 8 9 4
-
 Pirmi skaičiai - nd pažymiai, paskutinis skaičius – egzaminas.
 
 ![Įvesties foto](images/Ivestis.png)
 
 ---
 
-# 📤 Išvestis
+# Išvestis
 
 Programoje galima išvesti studentus:
 
 - į terminalą
-- į failus: `kietiakiai_X.txt`, `vargsiukai_X.txt`
+- į failus: `kietiakiai_.txt`, `vargsiukai_.txt`
 
 Išvesties formatas:
 
 ![Išvesties foto](images/Isvestis.png)
 
+## v1.1 testavimo rezultatai
 
-# v1.2 testavimo rezultatai
+#### Pateikiami rezultatai su šimtu tūkstančiu ir milijonu studentų laikais
+
+| Failas           | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
+|------------------|-------------|------------|-------------|----------|---------------------|
+| studentai_100000 | 1.8058 s    | 0.4484 s   | 0.0518 s    | 0.7406 s | **3.0464 s**        |
+| studentai_1000000| 18.1778 s   | 5.8564 s   | 0.6142 s    | 6.1636 s | **30.8118 s**       |
+
+## v1.2 testavimo rezultatai
+
+#### Pateikiami rezultatai su šimtu tūkstančiu ir milijonu studentų laikais
 
 | Failas             | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
 |--------------------|-------------|------------|-------------|----------|---------------------|
@@ -92,3 +98,9 @@ Išvesties formatas:
 | studentai_1000000  | 17.687 s    | 1.038 s    | 0.303 s     | 6.910 s  | **25.938 s**        |
 
 ![Rezultatai](images/Test_v12.png)
+
+## Išvados
+
+- v1.2 testavimas veikia greičiau nei v1.1
+- Didžiausią laiko dalį užima Nuskaitymas bei įrašymas
+- darbe tinkamai realizuoti kopijavimo konstruktorius, kopijavimo operatorius bei destruktorius
