@@ -5,13 +5,17 @@
 #include <iostream>
 #include <algorithm>
 
+// --- Konstruktoriai ---
+
 Studentas::Studentas() : egzaminas_(0.0) {}
 
 Studentas::Studentas(const Studentas& other)
-    : vardas_(other.vardas_),
-      pavarde_(other.pavarde_),
-      nd_(other.nd_),
-      egzaminas_(other.egzaminas_) {}
+{
+    this->vardas_ = other.vardas_;
+    this->pavarde_ = other.pavarde_;
+    this->nd_ = other.nd_;
+    this->egzaminas_ = other.egzaminas_;
+}
 
 Studentas& Studentas::operator=(const Studentas& other) {
     if (this != &other) {
@@ -28,22 +32,18 @@ Studentas::~Studentas() {}
 Studentas::Studentas(std::istream& is) : egzaminas_(0.0) {
     readStudent(is);
 }
-// GET'ERIAI
 
-const std::string& Studentas::vardas() const { return vardas_; }
-const std::string& Studentas::pavarde() const { return pavarde_; }
+// --- Getteriai ---
 const std::vector<double>& Studentas::nd() const { return nd_; }
 double Studentas::egzaminas() const { return egzaminas_; }
 
-// SET'ERIAI
-
+// --- Setteriai ---
 void Studentas::setVardas(const std::string& v) { vardas_ = v; }
 void Studentas::setPavarde(const std::string& p) { pavarde_ = p; }
 void Studentas::setNd(const std::vector<double>& nd) { nd_ = nd; }
 void Studentas::setEgzaminas(double egz) { egzaminas_ = egz; }
 
-// STRATEGIJOS
-
+// --- Strategijos ---
 double Studentas::vidurkis(const std::vector<double>& paz) {
     return skaiciuotiVidurki(paz);
 }
@@ -58,8 +58,7 @@ double Studentas::galBalas(double (*strategy)(const std::vector<double>&)) const
     return 0.4 * ndRez + 0.6 * egzaminas_;
 }
 
-// STUDENTO NUSKAITYMAS
-
+// --- Skaitymas ---
 std::istream& Studentas::readStudent(std::istream& is) {
     nd_.clear();
     egzaminas_ = 0.0;
@@ -86,8 +85,6 @@ std::istream& Studentas::readStudent(std::istream& is) {
         nd_.pop_back();
         return is;
     }
-
-    // ==== Interaktyvus vartotojo skaitymas ====
 
     std::cout << "Iveskite studento duomenis\n";
 
@@ -144,22 +141,20 @@ std::istream& Studentas::readStudent(std::istream& is) {
     return is;
 }
 
-// OPERATORIAI
-
+// --- Operatoriai ---
 std::istream& operator>>(std::istream& in, Studentas& s) {
     return s.readStudent(in);
 }
 
 std::ostream& operator<<(std::ostream& out, const Studentas& s) {
-    out << s.vardas_ << " " << s.pavarde_ << " ND: ";
+    out << s.vardas() << " " << s.pavarde() << " ND: ";
     for (double v : s.nd_) out << v << " ";
-    out << "Egz: " << s.egzaminas_
+    out << "Egz: " << s.egzaminas()
         << " Galutinis: " << s.galBalas();
     return out;
 }
 
-// LYGINIMO FUNKCIJOS
-
+// --- Lyginimai ---
 bool compare(const Studentas& a, const Studentas& b) {
     return a.vardas() < b.vardas();
 }

@@ -76,45 +76,45 @@ CMakeFiles/class_vector.dir/src/main.cpp.obj: CMakeFiles/class_vector.dir/includ
 CMakeFiles/class_vector.dir/src/main.cpp.obj: C:/Users/Kompiuteris/Downloads/Naujas_isgit/Class-repo/src/main.cpp
 CMakeFiles/class_vector.dir/src/main.cpp.obj: CMakeFiles/class_vector.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/class_vector.dir/src/main.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/class_vector.dir/src/main.cpp.obj -MF CMakeFiles\class_vector.dir\src\main.cpp.obj.d -o CMakeFiles\class_vector.dir\src\main.cpp.obj -c C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\main.cpp
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/class_vector.dir/src/main.cpp.obj -MF CMakeFiles\class_vector.dir\src\main.cpp.obj.d -o CMakeFiles\class_vector.dir\src\main.cpp.obj -c C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\main.cpp
 
 CMakeFiles/class_vector.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/class_vector.dir/src/main.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\main.cpp > CMakeFiles\class_vector.dir\src\main.cpp.i
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\main.cpp > CMakeFiles\class_vector.dir\src\main.cpp.i
 
 CMakeFiles/class_vector.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/class_vector.dir/src/main.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\main.cpp -o CMakeFiles\class_vector.dir\src\main.cpp.s
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\main.cpp -o CMakeFiles\class_vector.dir\src\main.cpp.s
 
 CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj: CMakeFiles/class_vector.dir/flags.make
 CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj: CMakeFiles/class_vector.dir/includes_CXX.rsp
 CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj: C:/Users/Kompiuteris/Downloads/Naujas_isgit/Class-repo/src/Funkcijos.cpp
 CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj: CMakeFiles/class_vector.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj -MF CMakeFiles\class_vector.dir\src\Funkcijos.cpp.obj.d -o CMakeFiles\class_vector.dir\src\Funkcijos.cpp.obj -c C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Funkcijos.cpp
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/class_vector.dir/src/Funkcijos.cpp.obj -MF CMakeFiles\class_vector.dir\src\Funkcijos.cpp.obj.d -o CMakeFiles\class_vector.dir\src\Funkcijos.cpp.obj -c C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Funkcijos.cpp
 
 CMakeFiles/class_vector.dir/src/Funkcijos.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/class_vector.dir/src/Funkcijos.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Funkcijos.cpp > CMakeFiles\class_vector.dir\src\Funkcijos.cpp.i
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Funkcijos.cpp > CMakeFiles\class_vector.dir\src\Funkcijos.cpp.i
 
 CMakeFiles/class_vector.dir/src/Funkcijos.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/class_vector.dir/src/Funkcijos.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Funkcijos.cpp -o CMakeFiles\class_vector.dir\src\Funkcijos.cpp.s
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Funkcijos.cpp -o CMakeFiles\class_vector.dir\src\Funkcijos.cpp.s
 
 CMakeFiles/class_vector.dir/src/Studentas.cpp.obj: CMakeFiles/class_vector.dir/flags.make
 CMakeFiles/class_vector.dir/src/Studentas.cpp.obj: CMakeFiles/class_vector.dir/includes_CXX.rsp
 CMakeFiles/class_vector.dir/src/Studentas.cpp.obj: C:/Users/Kompiuteris/Downloads/Naujas_isgit/Class-repo/src/Studentas.cpp
 CMakeFiles/class_vector.dir/src/Studentas.cpp.obj: CMakeFiles/class_vector.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/class_vector.dir/src/Studentas.cpp.obj"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/class_vector.dir/src/Studentas.cpp.obj -MF CMakeFiles\class_vector.dir\src\Studentas.cpp.obj.d -o CMakeFiles\class_vector.dir\src\Studentas.cpp.obj -c C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Studentas.cpp
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/class_vector.dir/src/Studentas.cpp.obj -MF CMakeFiles\class_vector.dir\src\Studentas.cpp.obj.d -o CMakeFiles\class_vector.dir\src\Studentas.cpp.obj -c C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Studentas.cpp
 
 CMakeFiles/class_vector.dir/src/Studentas.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/class_vector.dir/src/Studentas.cpp.i"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Studentas.cpp > CMakeFiles\class_vector.dir\src\Studentas.cpp.i
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Studentas.cpp > CMakeFiles\class_vector.dir\src\Studentas.cpp.i
 
 CMakeFiles/class_vector.dir/src/Studentas.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/class_vector.dir/src/Studentas.cpp.s"
-	C:\msys64\ucrt64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Studentas.cpp -o CMakeFiles\class_vector.dir\src\Studentas.cpp.s
+	C:\mingw-w64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\Kompiuteris\Downloads\Naujas_isgit\Class-repo\src\Studentas.cpp -o CMakeFiles\class_vector.dir\src\Studentas.cpp.s
 
 # Object files for target class_vector
 class_vector_OBJECTS = \
