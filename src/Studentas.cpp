@@ -64,7 +64,6 @@ std::istream& Studentas::readStudent(std::istream& is) {
     nd_.clear();
     egzaminas_ = 0.0;
 
-    // ==== Skaitymas iš failo ====
     if (&is != &std::cin) {
         if (!(is >> vardas_ >> pavarde_)) {
             is.setstate(std::ios::failbit);
@@ -92,14 +91,14 @@ std::istream& Studentas::readStudent(std::istream& is) {
 
     std::cout << "Iveskite studento duomenis\n";
 
-    std::cout << "Vardas: ";
+    std::cout << "Studento vardas: ";
     is >> vardas_;
 
-    std::cout << "Pavarde: ";
+    std::cout << "Studento pavarde: ";
     is >> pavarde_;
 
     int generuoti = 0;
-    std::cout << "Generuoti pazymius atsitiktinai? (1/0): ";
+    std::cout << "Generuoti pazymius atsitiktinai? (1 - taip, 0 - ne): ";
     is >> generuoti;
 
     if (generuoti == 1) {
@@ -112,12 +111,12 @@ std::istream& Studentas::readStudent(std::istream& is) {
     }
 
     int zinauKiek = 0;
-    std::cout << "Ar zinote pazymiu kieki? (1/0): ";
+    std::cout << "Ar zinote pazymiu kieki? (1 - taip, 0 - ne): ";
     is >> zinauKiek;
 
     if (zinauKiek == 1) {
         int kiek;
-        std::cout << "Kiek pazymiu? ";
+        std::cout << "Kiek pazymiu turi studentas? ";
         is >> kiek;
 
         nd_.reserve(kiek);
@@ -130,7 +129,7 @@ std::istream& Studentas::readStudent(std::istream& is) {
         }
     } else {
         double paz;
-        std::cout << "Veskite pazymius (0 baigti):\n";
+        std::cout << "Veskite pazymius (iveskite 0, jei norite baigti):\n";
         while (true) {
             std::cout << "Pazymys: ";
             is >> paz;
