@@ -11,6 +11,7 @@ private:
     double egzaminas_;
 
 public:
+    // Rule of Three
     Studentas();
     Studentas(const Studentas& other);
     Studentas& operator=(const Studentas& other);
@@ -18,9 +19,10 @@ public:
 
     explicit Studentas(std::istream& is);
 
-    // Override iš Žmogus
-    std::string vardas() const override { return vardas_; }
-    std::string pavarde() const override { return pavarde_; }
+    // Paveldėti getteriai iš Zmogus
+    const std::string& vardas() const override { return vardas_; }
+    const std::string& pavarde() const override { return pavarde_; }
+
     void info() const override {
         std::cout << "Studentas: " << vardas_ << " " << pavarde_ << std::endl;
     }

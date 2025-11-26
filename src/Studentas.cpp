@@ -5,22 +5,20 @@
 #include <iostream>
 #include <algorithm>
 
-// --- Konstruktoriai ---
+// --- Rule of Three ---
 
 Studentas::Studentas() : egzaminas_(0.0) {}
 
 Studentas::Studentas(const Studentas& other)
+    : Zmogus(other) 
 {
-    this->vardas_ = other.vardas_;
-    this->pavarde_ = other.pavarde_;
-    this->nd_ = other.nd_;
-    this->egzaminas_ = other.egzaminas_;
+    nd_ = other.nd_;
+    egzaminas_ = other.egzaminas_;
 }
 
 Studentas& Studentas::operator=(const Studentas& other) {
     if (this != &other) {
-        vardas_ = other.vardas_;
-        pavarde_ = other.pavarde_;
+        Zmogus::operator=(other); 
         nd_ = other.nd_;
         egzaminas_ = other.egzaminas_;
     }
@@ -29,6 +27,7 @@ Studentas& Studentas::operator=(const Studentas& other) {
 
 Studentas::~Studentas() {}
 
+// --- Papildomi konstruktoriai ---
 Studentas::Studentas(std::istream& is) : egzaminas_(0.0) {
     readStudent(is);
 }
@@ -52,7 +51,9 @@ double Studentas::mediana(const std::vector<double>& paz) {
     return skaiciuotiMediana(paz);
 }
 
-double Studentas::galBalas(double (*strategy)(const std::vector<double>&)) const {
+double Studentas::galBalas(
+    double (*strategy)(const std::vector<double>&)) const {
+
     if (!strategy) strategy = Studentas::mediana;
     double ndRez = nd_.empty() ? 0.0 : strategy(nd_);
     return 0.4 * ndRez + 0.6 * egzaminas_;
@@ -75,7 +76,6 @@ std::istream& Studentas::readStudent(std::istream& is) {
 
         double x;
         while (ss >> x) nd_.push_back(x);
-
         if (nd_.empty()) {
             is.setstate(std::ios::failbit);
             return is;
@@ -117,7 +117,6 @@ std::istream& Studentas::readStudent(std::istream& is) {
         is >> kiek;
 
         nd_.reserve(kiek);
-
         for (int i = 0; i < kiek; i++) {
             double paz;
             std::cout << i + 1 << ": ";
@@ -137,7 +136,6 @@ std::istream& Studentas::readStudent(std::istream& is) {
 
     std::cout << "Egzaminas: ";
     is >> egzaminas_;
-
     return is;
 }
 
