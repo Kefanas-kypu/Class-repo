@@ -1,4 +1,4 @@
-# Studentų Rūšiavimo Sistema — v1.5
+# Studentų Rūšiavimo Sistema
 
 ## Projekto aprašymas
 
@@ -27,7 +27,7 @@ Klasė yra **abstrakti**, nes turi grynai virtualius metodus, kuriuos privalo į
 
 ---
 
-### `Studentas` paveldi iš `Zmogus`
+### Klasė `Studentas` paveldi iš `Zmogus`
 
 ![Studentas klasė](images/studentas.png)
 
@@ -42,6 +42,8 @@ Klasė `Studentas` dabar:
   - galutinio balo skaičiavimą
   - operatorius `>>` ir `<<`
   - darbą su dideliais failais ir testavimą
+
+![Studento ir zmogaus sajunga](images/kodas.png)
 
 ---
 
