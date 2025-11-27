@@ -1,107 +1,99 @@
-# Studentų Rūšiavimo Sistema — v1.2  
+# Studentų Rūšiavimo Sistema — v1.5
+
+## Projekto aprašymas
+
+v1.5 versijoje projektas išplečiamas objektinio programavimo paveldėjimu, kartu išlaikant visą v1.2 funkcionalumą (skaitymas, strategijos, rikiavimas, skirstymas, testavimas, rule of three).
+
+Pagrindinis šios versijos tikslas – įvesti abstrakčią klasę `Zmogus` ir pritaikyti paveldėjimą klasėje `Studentas`, kad projekto struktūra būtų aiškesnė ir lengviau plečiama.
 
 ---
 
-## Aprašymas
- 
-Dabartinėje versijoje `Studentas` yra pilnai įgyvendintos **class** funkcijos:
+## v1.5 nauji pakeitimai
 
-- Pilnai įgyvendinta **Rule of Three**
-- Pridėti perkrauti įvesties/išvesties operatoriai
-- Aiškiai apibrėžti getter/setter metodai
-- Skaitymas iš vartotojo ir failo
-- Strategijos metodas galutinio balo skaičiavimui (vidurkis / mediana)
-- Darbas su dideliais duomenų failais: skaidymas, rūšiavimas, rašymas į failą
+### Abstrakti bazinė klasė `Zmogus`
 
----
+Sukurta nauja klasė `Zmogus`, kuri aprašo bendrus žmogaus duomenis:
 
-## Studentas klasė
+- vardas
+- pavarde
 
-## Rule of Three
+![Zmogus klasė](images/zmogus.png)
 
-| Metodas | Paskirtis |
-|--------|-----------|
-| `Studentas(const Studentas& other)` | Kuria naują objekto kopiją |
-| `Studentas& operator=(const Studentas& other)` | Priskiria vieno objekto reikšmes kitam |
-| `~Studentas()` | Destruktorius |
+Klasė yra **abstrakti**, nes turi grynai virtualius metodus, kuriuos privalo įgyvendinti paveldinčios klasės:
 
+    virtual const std::string& vardas() const = 0;
+    virtual const std::string& pavarde() const = 0;
+    virtual void info() const = 0;
 
 ---
 
-## Perkrauti operatoriai
+### `Studentas` paveldi iš `Zmogus`
 
-### operator >>
-Leidžia skaityti studentą iš:
+![Studentas klasė](images/studentas.png)
 
-- vartotojo (`std::cin`)
-- failo (`std::ifstream`)
+Klasė `Studentas` dabar:
 
-### operator <<  
-Leidžia:
+- paveldi vardas_ ir pavarde_ iš `Zmogus`
+- įgyvendina abstrakčius metodus vardas(), pavarde(), info()
+- išsaugo visą v1.2 funkcionalumą:
 
-- išvesti studentą į ekraną
-- išvesti studentą į failą (`std::ofstream`)
-
----
-
-# Įvesties režimai
-
-### 1. Rankinė įvestis  
-Vartotojas įveda:
-
-- vardą  
-- pavardę  
-- pažymius (su galimybe nurodyti kiek / įvesti nežinant kiek)  
-- egzamino pažymį  
-
-### 2. Automatinė pažymių generacija  
-Sistema sugeneruoja:
-
-- atsitiktinius namų darbų pažymius  
-- atsitiktinį egzamino rezultatą  
-
-### 3. Skaitymas iš failo  
-
-Pirmi skaičiai - nd pažymiai, paskutinis skaičius – egzaminas.
-
-![Įvesties foto](images/Ivestis.png)
+  - skaitymą iš vartotojo ir failo
+  - strategijas (vidurkis, mediana)
+  - galutinio balo skaičiavimą
+  - operatorius `>>` ir `<<`
+  - darbą su dideliais failais ir testavimą
 
 ---
 
-# Išvestis
+## Išlikusi v1.2 programos logika
 
-Programoje galima išvesti studentus:
+Nors v1.5 keičia projekto struktūrą (įvedama bazinė klasė ir paveldėjimas), funkcionalumas išlieka toks pats kaip v1.2 versijoje.
 
-- į terminalą
-- į failus: `kietiakiai_.txt`, `vargsiukai_.txt`
+Programa vis dar leidžia:
 
-Išvesties formatas:
+- įvesti studentų duomenis rankiniu būdu
+- generuoti atsitiktinius pažymius
+- nuskaityti studentus iš failo
+- apskaičiuoti galutinį balą naudojant:
+  - mediana
+  - vidurkį
+- surūšiuoti ir suskirstyti studentus į:
+  - „kietiakus“
+  - „vargšiukus“
 
-![Išvesties foto](images/Isvestis.png)
+  ![Meniu](images/meniu.png)
 
-## v1.1 testavimo rezultatai
+- išvesti rezultatus:
+  - į terminalą
+  - į failus `kietiakiai_*.txt`, `vargsiukai_*.txt`
 
-#### Pateikiami rezultatai su šimtu tūkstančiu ir milijonu studentų laikais
+![Padalijimas](images/6_padalijimas.png)
+---
 
-| Failas           | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
-|------------------|-------------|------------|-------------|----------|---------------------|
-| studentai_100000 | 1.8058 s    | 0.4484 s   | 0.0518 s    | 0.7406 s | **3.0464 s**        |
-| studentai_1000000| 18.1778 s   | 5.8564 s   | 0.6142 s    | 6.1636 s | **30.8118 s**       |
+### Naudojimosi instrukcija
 
-## v1.2 testavimo rezultatai
+- Atsidaryk Visual Studio code
+- Atsidaryk terminalą
+- Padaryk mkdir build ir tada cd build
+- Paleisk mingw32-make
+- Tada jau galėsi paleisti \Studentai_vector.exe, kuris paleis kodą vectoriaus konteineriui.
 
-#### Pateikiami rezultatai su šimtu tūkstančiu ir milijonu studentų laikais
+## v1.5 pakeitimų santraukos lentelė
 
-| Failas             | Nuskaitymas | Rikiavimas | Padalijimas | Įrašymas | **Bendras laikas** |
-|--------------------|-------------|------------|-------------|----------|---------------------|
-| studentai_100000   | 1.759 s     | 0.085 s    | 0.028 s     | 0.738 s  | **2.610 s**         |
-| studentai_1000000  | 17.687 s    | 1.038 s    | 0.303 s     | 6.910 s  | **25.938 s**        |
+| Pakeitimas                  | Aprašymas                                                       |
+|----------------------------|-----------------------------------------------------------------|
+| Nauja klasė `Zmogus`       | Abstrakti bazinė žmogaus klasė                                 |
+| Paveldėjimas               | `Studentas` paveldi `Zmogus` (public paveldėjimas)             |
+| Rule of Three atnaujinta   | Kopijuojama ir bazinė, ir išvestinė klasė                      |
+| Getteriai tinkamai perrašomi    | Efektyvūs `const std::string&` getteriai                       |
+| Struktūra aiški          | Aiškesnis OOP dizainas, lengviau pridėti naujas klases         |
+| išlikusi  v1.2 logika      | Skaitymas, strategijos, testavimai veikia kaip v1.2 versijoje |
 
-![Rezultatai](images/Test_v12.png)
+---
 
 ## Išvados
 
-- v1.2 testavimas veikia greičiau nei v1.1
-- Didžiausią laiko dalį užima Nuskaitymas bei įrašymas
-- darbe tinkamai realizuoti kopijavimo konstruktorius, kopijavimo operatorius bei destruktorius
-- v1.2 kodo struktūra praktiškesnė ateities versijoms.
+- v1.5 versijoje sėkmingai pritaikytas **paveldėjimas** ir **abstrakti bazinė klasė**.
+- `Studentas` klasė paveldi `Zmogus` ir išlaiko visą v1.2 logiką.
+- Projekto struktūra tapo aiškesnė, labiau atitinka OOP principus ir yra lengviau plečiama.
+- Užduoties reikalavimai dėl abstrakčios klasės, paveldėjimo ir Rule of Three yra įvykdyti.
