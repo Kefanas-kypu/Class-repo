@@ -138,7 +138,7 @@ void testavimas() {
         double laikas_nuskaitymas = std::chrono::duration<double>(end_nuskaitymas - start_nuskaitymas).count();
 
         if (test_grupe.empty()) {
-            std::cout << "Failas " << fail_name << " tuščias arba nepavyko nuskaityti.\n";
+            std::cout << "Failas " << fail_name << " tuscias arba nepavyko nuskaityti.\n";
             continue;
         }
 

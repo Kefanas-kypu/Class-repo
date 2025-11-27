@@ -97,5 +97,5 @@ Programa vis dar leidžia:
 
 - v1.5 versijoje sėkmingai pritaikytas **paveldėjimas** ir **abstrakti bazinė klasė**.
 - `Studentas` klasė paveldi `Zmogus` ir išlaiko visą v1.2 logiką.
-- Projekto struktūra tapo aiškesnė, labiau atitinka OOP principus ir yra lengviau plečiama.
+- Projekto struktūra tapo aiškesnė ir yra lengviau plečiama.
 - Užduoties reikalavimai dėl abstrakčios klasės, paveldėjimo ir Rule of Three yra įvykdyti.
