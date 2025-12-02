@@ -1,101 +1,194 @@
-# Studentų Rūšiavimo Sistema
+# Studentų Rūšiavimo Sistema v2.0
 
-## Projekto aprašymas
-
-v1.5 versijoje projektas išplečiamas objektinio programavimo paveldėjimu, kartu išlaikant visą v1.2 funkcionalumą (skaitymas, strategijos, rikiavimas, skirstymas, testavimas, rule of three).
-
-Pagrindinis šios versijos tikslas – įvesti abstrakčią klasę `Zmogus` ir pritaikyti paveldėjimą klasėje `Studentas`, kad projekto struktūra būtų aiškesnė ir lengviau plečiama.
-
----
-
-## v1.5 nauji pakeitimai
-
-### Abstrakti bazinė klasė `Zmogus`
-
-Sukurta nauja klasė `Zmogus`, kuri aprašo bendrus žmogaus duomenis:
-
-- vardas
-- pavarde
-
-![Zmogus klasė](images/zmogus.png)
-
-Klasė yra **abstrakti**, nes turi grynai virtualius metodus, kuriuos privalo įgyvendinti paveldinčios klasės:
-
-    virtual const std::string& vardas() const = 0;
-    virtual const std::string& pavarde() const = 0;
-    virtual void info() const = 0;
+Ši programa leidžia:
+- nuskaityti studentų duomenis,
+- skaičiuoti jų galutinius balus (pagal medianą arba vidurkį),
+- rūšiuoti ir skirstyti studentus į *kietiakius* ir *vargšiukus*,
+- generuoti atsitiktinius testinius failus,
+- atlikti automatinį našumo testavimą (iki 1 mln. studentų),
+- naudoti **paveldėjimą** (`Zmogus` → `Studentas`),
+- naudoti **Rule of Three** ir strategijos šabloną galutinio balo skaičiavimui,
+- automatiškai generuoti dokumentaciją su **Doxygen**,
+- paleisti vienetų testus (**Catch2**) su CTest.
 
 ---
 
-### Klasė `Studentas` paveldi iš `Zmogus`
+# Projekto struktūra
 
-![Studentas klasė](images/studentas.png)
+v_du_nulis/
+│
+├── src/
+│ ├── main.cpp
+│ ├── Studentas.cpp
+│ ├── Funkcijos.cpp
+│ ├── Zmogus.cpp
+│
+├── include/
+│ ├── Studentas.h
+│ ├── Funkcijos.h
+│ ├── Zmogus.h
+│ ├── mediana.h
+│
+├── tests/
+│ └── test_studentas.cpp
+│
+├── docs/ <-- Automatinė Doxygen dokumentacija
+├── CMakeLists.txt
+├── Doxyfile
+└── README.md
 
-Klasė `Studentas` dabar:
-
-- paveldi vardas_ ir pavarde_ iš `Zmogus`
-- įgyvendina abstrakčius metodus vardas(), pavarde(), info()
-- išsaugo visą v1.2 funkcionalumą:
-
-  - skaitymą iš vartotojo ir failo
-  - strategijas (vidurkis, mediana)
-  - galutinio balo skaičiavimą
-  - operatorius `>>` ir `<<`
-  - darbą su dideliais failais ir testavimą
-
-![Studento ir zmogaus sajunga](images/kodas.png)
-
----
-
-## Išlikusi v1.2 programos logika
-
-Nors v1.5 keičia projekto struktūrą (įvedama bazinė klasė ir paveldėjimas), funkcionalumas išlieka toks pats kaip v1.2 versijoje.
-
-Programa vis dar leidžia:
-
-- įvesti studentų duomenis rankiniu būdu
-- generuoti atsitiktinius pažymius
-- nuskaityti studentus iš failo
-- apskaičiuoti galutinį balą naudojant:
-  - mediana
-  - vidurkį
-- surūšiuoti ir suskirstyti studentus į:
-  - „kietiakus“
-  - „vargšiukus“
-
-  ![Meniu](images/meniu.png)
-
-- išvesti rezultatus:
-  - į terminalą
-  - į failus `kietiakiai_*.txt`, `vargsiukai_*.txt`
-
-![Padalijimas](images/6_padalijimas.png)
----
-
-### Naudojimosi instrukcija
-
-- Atsidaryk Visual Studio code
-- Atsidaryk terminalą
-- Padaryk mkdir build ir tada cd build
-- Paleisk mingw32-make
-- Tada jau galėsi paleisti \Studentai_vector.exe, kuris paleis kodą vectoriaus konteineriui.
-
-## v1.5 pakeitimų santraukos lentelė
-
-| Pakeitimas                  | Aprašymas                                                       |
-|----------------------------|-----------------------------------------------------------------|
-| Nauja klasė `Zmogus`       | Abstrakti bazinė žmogaus klasė                                 |
-| Paveldėjimas               | `Studentas` paveldi `Zmogus` (public paveldėjimas)             |
-| Rule of Three atnaujinta   | Kopijuojama ir bazinė, ir išvestinė klasė                      |
-| Getteriai tinkamai perrašomi    | Efektyvūs `const std::string&` getteriai                       |
-| Struktūra aiški          | Aiškesnis OOP dizainas, lengviau pridėti naujas klases         |
-| išlikusi  v1.2 logika      | Skaitymas, strategijos, testavimai veikia kaip v1.2 versijoje |
 
 ---
 
-## Išvados
+# 🧩 Naudojamos technologijos
 
-- v1.5 versijoje sėkmingai pritaikytas **paveldėjimas** ir **abstrakti bazinė klasė**.
-- `Studentas` klasė paveldi `Zmogus` ir išlaiko visą v1.2 logiką.
-- Projekto struktūra tapo aiškesnė ir yra lengviau plečiama.
-- Užduoties reikalavimai dėl abstrakčios klasės, paveldėjimo ir Rule of Three yra įvykdyti.
+| Funkcija | Sprendimas |
+|---------|------------|
+| Dokumentacija | **Doxygen** |
+| Vienetų testai | **Catch2 + CTest** |
+| Kodo organizavimas | **CMake** |
+| OOP principai | Paveldėjimas, Rule of Three, polimorfizmas |
+| Strategijos šablonas | Pasirenkamas balo skaičiavimo metodas |
+
+---
+
+# 🧠 Programos architektūra
+
+### ✔ `Zmogus` (abstrakti klasė)
+- Turi `vardas_`, `pavarde_`
+- Abstraktūs metodai: `vardas()`, `pavarde()`, `info()`
+- Pagrindas paveldėjimui
+
+### ✔ `Studentas` (paveldi Zmogus)
+- Laiko:
+  - namų darbų pažymius
+  - egzamino balą
+- Implementuoja:
+  - **Rule of Three** (copy ctor, assignment operator, destructor)
+  - strategijos funkciją: `galBalas(strategy)`
+  - `readStudent()` – skaito duomenis iš failo arba interaktyviai
+
+### ✔ Pagalbinės funkcijos (`Funkcijos.h/.cpp`)
+- studentų rūšiavimas
+- failų generavimas
+- rezultatų išvedimas
+- padalinimas į grupes
+- našumo testavimas
+
+---
+
+# Programos paleidimas
+
+### **1. Sukurkite build katalogą**
+
+mkdir build
+cd build
+
+
+### **2. Sugeneruokite projektą su CMake**
+
+cmake -G "MinGW Makefiles" ..
+
+
+### **3. Sukompiliuokite**
+
+cmake --build .
+
+
+### **4. Paleiskite programą**
+
+./class_vector.exe
+
+
+---
+
+# Testų paleidimas
+
+Testų failas: `tests/test_studentas.cpp`
+
+### **Paleidimas:**
+
+Iš `build/` aplanko:
+
+./studentu_tests.exe
+
+
+---
+
+# Doxygen dokumentacija
+
+Sukurti dokumentaciją:
+
+doxygen Doxyfile
+
+
+Dokumentacija sugeneruojama į katalogą:
+
+docs/html/index.html
+
+Atidarykite naršyklėje:
+
+- `C:\...\v_du_nulis\docs\html\index.html`
+
+---
+
+# 🛠 Generuojami failai
+
+### Automatiniai testiniai failai:
+
+studentai_100000.txt
+studentai_1000000.txt
+
+### Padalinti rezultatai:
+
+kietiakiai_.txt
+vargsiukai_.txt
+
+---
+
+# Pagrindinės funkcijos
+
+### ✔ Studentų nuskaitymas iš failo  
+Failo formatas:
+Vardas Pavarde ND1 ND2 ... Egzaminas
+
+### ✔ Galutinio balo skaičiavimas  
+
+galBalas(Studentas::vidurkis)
+galBalas(Studentas::mediana)
+
+
+### ✔ Studentų skirstymas į grupes  
+- ≥5 — *kietiakiai*
+- <5 — *vargšiukai*
+
+### ✔ Failų generavimas  
+
+generuotiFaila(nd_count, kiekis)
+
+
+---
+
+# 🎯 Atliktos OOP užduoties dalys
+
+✔ Paveldėjimas iš abstraktinės bazinės klasės  
+✔ Rule of Three  
+✔ Strategijos šablonas  
+✔ APK testai naudojant Catch2  
+✔ CMake projektas  
+✔ Automatinė dokumentacija  
+✔ Rikiavimas ir padalijimas  
+✔ Veikimo laiko matavimas
+
+---
+
+# ✔ Išvada
+
+Projektas pilnai atitinka visus reikalavimus:
+
+- tvarkinga architektūra,
+- aiškiai išskaidytas kodas,
+- dokumentacija,
+- testai,
+- našumo analizė,
+- OOP principų taikymas.
