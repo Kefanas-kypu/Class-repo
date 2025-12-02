@@ -13,26 +13,28 @@
 
 ---
 
-# Projekto struktūra
+## Projekto struktūra
 
 v_du_nulis/
-│
 ├── src/
-│ ├── main.cpp
-│ ├── Studentas.cpp
-│ ├── Funkcijos.cpp
-│ ├── Zmogus.cpp
+│   ├── main.cpp
+│   ├── Studentas.cpp
+│   ├── Funkcijos.cpp
+│   └── Zmogus.cpp
 │
 ├── include/
-│ ├── Studentas.h
-│ ├── Funkcijos.h
-│ ├── Zmogus.h
-│ ├── mediana.h
+│   ├── Studentas.h
+│   ├── Funkcijos.h
+│   ├── Zmogus.h
+│   └── mediana.h
 │
 ├── tests/
-│ └── test_studentas.cpp
+│   └── test_studentas.cpp
 │
-├── docs/ <-- Automatinė Doxygen dokumentacija
+├── docs/
+│   └── html/
+│       └── index.html
+│
 ├── CMakeLists.txt
 ├── Doxyfile
 └── README.md
@@ -40,7 +42,7 @@ v_du_nulis/
 
 ---
 
-# 🧩 Naudojamos technologijos
+## Naudojamos technologijos
 
 | Funkcija | Sprendimas |
 |---------|------------|
@@ -52,14 +54,14 @@ v_du_nulis/
 
 ---
 
-# 🧠 Programos architektūra
+## Programos architektūra
 
-### ✔ `Zmogus` (abstrakti klasė)
+### `Zmogus` (abstrakti klasė)
 - Turi `vardas_`, `pavarde_`
 - Abstraktūs metodai: `vardas()`, `pavarde()`, `info()`
 - Pagrindas paveldėjimui
 
-### ✔ `Studentas` (paveldi Zmogus)
+### `Studentas` (paveldi Zmogus)
 - Laiko:
   - namų darbų pažymius
   - egzamino balą
@@ -68,7 +70,7 @@ v_du_nulis/
   - strategijos funkciją: `galBalas(strategy)`
   - `readStudent()` – skaito duomenis iš failo arba interaktyviai
 
-### ✔ Pagalbinės funkcijos (`Funkcijos.h/.cpp`)
+### Pagalbinės funkcijos (`Funkcijos.h/.cpp`)
 - studentų rūšiavimas
 - failų generavimas
 - rezultatų išvedimas
@@ -77,7 +79,7 @@ v_du_nulis/
 
 ---
 
-# Programos paleidimas
+## Programos paleidimas
 
 ### **1. Sukurkite build katalogą**
 
@@ -94,15 +96,13 @@ cmake -G "MinGW Makefiles" ..
 
 cmake --build .
 
-
 ### **4. Paleiskite programą**
 
 ./class_vector.exe
 
-
 ---
 
-# Testų paleidimas
+## Testų paleidimas
 
 Testų failas: `tests/test_studentas.cpp`
 
@@ -112,15 +112,13 @@ Iš `build/` aplanko:
 
 ./studentu_tests.exe
 
-
 ---
 
-# Doxygen dokumentacija
+## Doxygen dokumentacija
 
 Sukurti dokumentaciją:
 
 doxygen Doxyfile
-
 
 Dokumentacija sugeneruojama į katalogą:
 
@@ -132,7 +130,7 @@ Atidarykite naršyklėje:
 
 ---
 
-# 🛠 Generuojami failai
+## Generuojami failai
 
 ### Automatiniai testiniai failai:
 
@@ -146,43 +144,42 @@ vargsiukai_.txt
 
 ---
 
-# Pagrindinės funkcijos
+## Pagrindinės funkcijos
 
-### ✔ Studentų nuskaitymas iš failo  
+### Studentų nuskaitymas iš failo  
 Failo formatas:
 Vardas Pavarde ND1 ND2 ... Egzaminas
 
-### ✔ Galutinio balo skaičiavimas  
+### Galutinio balo skaičiavimas  
 
 galBalas(Studentas::vidurkis)
 galBalas(Studentas::mediana)
 
 
-### ✔ Studentų skirstymas į grupes  
+### Studentų skirstymas į grupes  
 - ≥5 — *kietiakiai*
 - <5 — *vargšiukai*
 
-### ✔ Failų generavimas  
+### Failų generavimas  
 
 generuotiFaila(nd_count, kiekis)
 
+---
+
+## Atliktos OOP užduoties dalys
+
+- Paveldėjimas iš abstraktinės bazinės klasės  
+- Rule of Three  
+- Strategijos šablonas  
+- APK testai naudojant Catch2  
+- CMake projektas  
+- Automatinė dokumentacija  
+- Rikiavimas ir padalijimas  
+- Veikimo laiko matavimas
 
 ---
 
-# 🎯 Atliktos OOP užduoties dalys
-
-✔ Paveldėjimas iš abstraktinės bazinės klasės  
-✔ Rule of Three  
-✔ Strategijos šablonas  
-✔ APK testai naudojant Catch2  
-✔ CMake projektas  
-✔ Automatinė dokumentacija  
-✔ Rikiavimas ir padalijimas  
-✔ Veikimo laiko matavimas
-
----
-
-# ✔ Išvada
+## Išvados
 
 Projektas pilnai atitinka visus reikalavimus:
 
