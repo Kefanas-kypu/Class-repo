@@ -1,47 +1,75 @@
-# Prerequisites
-*.d
+# ===========================
+# C++ Standard Ignore
+# ===========================
 
-# Compiled Object files
-*.slo
-*.lo
+# Object files
 *.o
 *.obj
+*.lo
+*.slo
 
-# Precompiled Headers
+# Precompiled headers
 *.gch
 *.pch
 
-# Linker files
-*.ilk
+# Libraries
+*.lib
+*.a
+*.la
+*.lai
 
-# Debugger Files
-*.pdb
-
-# Compiled Dynamic libraries
+# Shared objects / DLL / dylib
 *.so
 *.dylib
 *.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
 
 # Executables
 *.exe
 *.out
 *.app
 
-# debug information files
+# Debug files
+*.pdb
+*.ilk
 *.dwo
-<<<<<<< HEAD
-=======
-*.txt
-Naujas/
-*.md
->>>>>>> f076b42 (v1.0 kopija)
+
+# ===========================
+# CMake / Build System
+# ===========================
+
+# Ignore ALL build outputs
+build/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+
+# ===========================
+# Dependencies fetched by CMake
+# (Catch2, etc.)
+# ===========================
+_deps/
+
+# ===========================
+# Logs
+# ===========================
+*.log
+
+# ===========================
+# OS / Editor garbage
+# ===========================
+.DS_Store
+Thumbs.db
+
+# ===========================
+# Project-specific
+# ===========================
+# Ignore generated student files
+studentai_*.txt
+
+# Ignore docs unless explicitly included
+docs/html/
+docs/latex/

@@ -1,3 +1,8 @@
+/**
+ * @file main.cpp
+ * @brief Pagrindinė programos įėjimo funkcija – naudotojo meniu ir programos valdymas.
+ */
+
 #include "Funkcijos.h"
 #include <iostream>
 #include <iomanip>
