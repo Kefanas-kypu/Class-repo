@@ -15,13 +15,10 @@
  */
 class Zmogus {
 protected:
-    /// Žmogaus vardas.
     std::string vardas_;
-    /// Žmogaus pavarde.
     std::string pavarde_;
 
 public:
-    /// Numatytoji konstruktorius.
     Zmogus() = default;
 
     /**
@@ -32,12 +29,9 @@ public:
     Zmogus(const std::string& vardas, const std::string& pavarde)
         : vardas_(vardas), pavarde_(pavarde) {}
 
-    /// Kopijavimo konstruktorius.
     Zmogus(const Zmogus&) = default;
-    /// Priskyrimo operatorius.
     Zmogus& operator=(const Zmogus&) = default;
 
-    /// Virtualus destruktorius.
     virtual ~Zmogus() = default;
 
     /**

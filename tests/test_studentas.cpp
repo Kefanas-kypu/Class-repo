@@ -1,4 +1,3 @@
-// tests/test_studentas.cpp
 /**
  * @file test_studentas.cpp
  * @brief Pagrindiniai unit testai Studentas ir suskirstytiStudentus funkcijoms.
@@ -6,11 +5,11 @@
 
 #include <vector>
 #include <catch2/catch_test_macros.hpp>
-#include <catch2/catch_approx.hpp>   // <-- svarbu Catch2 v3
+#include <catch2/catch_approx.hpp>
 #include "Studentas.h"
 #include "Funkcijos.h"
 
-using Catch::Approx;  // <-- reikalingas Approx()
+using Catch::Approx;
 
 TEST_CASE("Studento galutinis balas skaiciuojamas pagal vidurki", "[Studentas]") {
     Studentas s;

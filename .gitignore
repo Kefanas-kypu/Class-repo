@@ -1,7 +1,3 @@
-# ===========================
-# C++ Standard Ignore
-# ===========================
-
 # Object files
 *.o
 *.obj
@@ -33,11 +29,7 @@
 *.ilk
 *.dwo
 
-# ===========================
-# CMake / Build System
-# ===========================
 
-# Ignore ALL build outputs
 build/
 cmake-build-*/
 CMakeFiles/
@@ -47,29 +39,16 @@ cmake_install.cmake
 CTestTestfile.cmake
 Testing/
 
-# ===========================
-# Dependencies fetched by CMake
-# (Catch2, etc.)
-# ===========================
+
 _deps/
 
-# ===========================
-# Logs
-# ===========================
 *.log
 
-# ===========================
-# OS / Editor garbage
-# ===========================
+
 .DS_Store
 Thumbs.db
 
-# ===========================
-# Project-specific
-# ===========================
-# Ignore generated student files
-studentai_*.txt
 
-# Ignore docs unless explicitly included
+studentai_*.txt
 docs/html/
 docs/latex/
