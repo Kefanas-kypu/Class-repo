@@ -16,29 +16,28 @@
 ## Projekto struktūra
 
 v_du_nulis/
+│
 ├── src/
 │   ├── main.cpp
 │   ├── Studentas.cpp
 │   ├── Funkcijos.cpp
-│   └── Zmogus.cpp
+│   ├── Zmogus.cpp
 │
 ├── include/
 │   ├── Studentas.h
 │   ├── Funkcijos.h
 │   ├── Zmogus.h
-│   └── mediana.h
+│   ├── mediana.h
 │
 ├── tests/
 │   └── test_studentas.cpp
 │
 ├── docs/
-│   └── html/
-│       └── index.html
+│   └── html/        ← Doxygen dokumentacija
 │
 ├── CMakeLists.txt
 ├── Doxyfile
 └── README.md
-
 
 ---
 
