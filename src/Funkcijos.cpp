@@ -1,5 +1,9 @@
-#include "Funkcijos.h"
+/**
+ * @file Funkcijos.cpp
+ * @brief Pagalbinės funkcijos studentų apdorojimui.
+ */
 
+#include "Funkcijos.h"
 #include <chrono>
 #include <iomanip>
 #include <random>

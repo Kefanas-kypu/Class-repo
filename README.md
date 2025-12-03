@@ -13,34 +13,6 @@
 
 ---
 
-## Projekto struktūra
-
-v_du_nulis/
-│
-├── src/
-│   ├── main.cpp
-│   ├── Studentas.cpp
-│   ├── Funkcijos.cpp
-│   ├── Zmogus.cpp
-│
-├── include/
-│   ├── Studentas.h
-│   ├── Funkcijos.h
-│   ├── Zmogus.h
-│   ├── mediana.h
-│
-├── tests/
-│   └── test_studentas.cpp
-│
-├── docs/
-│   └── html/        ← Doxygen dokumentacija
-│
-├── CMakeLists.txt
-├── Doxyfile
-└── README.md
-
----
-
 ## Naudojamos technologijos
 
 | Funkcija | Sprendimas |
@@ -85,11 +57,9 @@ v_du_nulis/
 mkdir build
 cd build
 
-
 ### **2. Sugeneruokite projektą su CMake**
 
 cmake -G "MinGW Makefiles" ..
-
 
 ### **3. Sukompiliuokite**
 
@@ -127,19 +97,20 @@ Atidarykite naršyklėje:
 
 - `C:\...\v_du_nulis\docs\html\index.html`
 
----
+### Doxygen generuotos dokumentacijos pavyzdys
 
-## Generuojami failai
+Čia galime matyti Doxygen dokumentaciją ir jos pagrindinius puslapius, naudojimo galimybes bei aprašymus. 
+Taip atrodo Doxygen pagrindinis langas:
+![Doxygen pagrindinis langas](doxygen_pagrindinis.png)
+Galime matyti visą failų struktūrą šiame darbe
+![Visi failai](Visi_failai.png)
+Čia matome Studento klasę:
+![Studento klasės langas](Studento_klase.png)
+Bei žmogaus klasę:
+![Žmogaus klasės langas](Zmogaus.png)
 
-### Automatiniai testiniai failai:
-
-studentai_100000.txt
-studentai_1000000.txt
-
-### Padalinti rezultatai:
-
-kietiakiai_.txt
-vargsiukai_.txt
+Taip pat galime matyti aprašytas funkcijas ir kuriose failuose jos naudojamos
+![Funckijos klasėse](Funckijos_klasese.png)
 
 ---
 
@@ -153,7 +124,6 @@ Vardas Pavarde ND1 ND2 ... Egzaminas
 
 galBalas(Studentas::vidurkis)
 galBalas(Studentas::mediana)
-
 
 ### Studentų skirstymas į grupes  
 - ≥5 — *kietiakiai*
@@ -182,9 +152,9 @@ generuotiFaila(nd_count, kiekis)
 
 Projektas pilnai atitinka visus reikalavimus:
 
-- tvarkinga architektūra,
-- aiškiai išskaidytas kodas,
-- dokumentacija,
-- testai,
-- našumo analizė,
-- OOP principų taikymas.
+- tvarkinga architektūra
+- aiškiai išskaidytas kodas
+- dokumentacija
+- testai
+- našumo analizė
+- veikia doxygen internete

@@ -1,6 +1,10 @@
+/**
+ * @file Studentas.cpp
+ * @brief Studentas klasės metodų realizacija.
+ */
+
 #include "Studentas.h"
 #include "mediana.h"
-
 #include <algorithm>
 #include <iostream>
 #include <limits>
