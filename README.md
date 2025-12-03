@@ -101,16 +101,16 @@ Atidarykite naršyklėje:
 
 Čia galime matyti Doxygen dokumentaciją ir jos pagrindinius puslapius, naudojimo galimybes bei aprašymus. 
 Taip atrodo Doxygen pagrindinis langas:
-![Doxygen pagrindinis langas](doxygen_pagrindinis.png)
+![Doxygen pagrindinis langas](images/doxygen_pagrindinis.png)
 Galime matyti visą failų struktūrą šiame darbe
-![Visi failai](Visi_failai.png)
+![Visi failai](images/Visi_failai.png)
 Čia matome Studento klasę:
-![Studento klasės langas](Studento_klase.png)
+![Studento klasės langas](images/Studento_klase.png)
 Bei žmogaus klasę:
-![Žmogaus klasės langas](Zmogaus.png)
+![Žmogaus klasės langas](images/Zmogaus.png)
 
 Taip pat galime matyti aprašytas funkcijas ir kuriose failuose jos naudojamos
-![Funckijos klasėse](Funckijos_klasese.png)
+![Funckijos klasėse](images/Funckijos_klasese.png)
 
 ---
 
