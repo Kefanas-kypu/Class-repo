@@ -110,7 +110,10 @@ Bei žmogaus klasę:
 ![Žmogaus klasės langas](images/Zmogaus.png)
 
 Taip pat galime matyti aprašytas funkcijas ir kuriose failuose jos naudojamos
-![Funckijos klasėse](images/Funckijos_klasese.png)
+![Funckijos klasėse](images/Funkcijos_klasese.png)
+
+Toliau matome funkcijos `galBalas()` veikimą - parodoma pati funkcija ir aprašomas jos tikslas.
+![Funkcijos galBalas dokumentacija](images/galbalas.png)
 
 ---
 
