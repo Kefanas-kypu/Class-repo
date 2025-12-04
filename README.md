@@ -67,21 +67,24 @@ cmake --build .
 
 ### **4. Paleiskite programą**
 
-./class_vector.exe
+.\studentu_app.exe
 
 ---
-
-## Testų paleidimas
-
-Testų failas: `tests/test_studentas.cpp`
 
 ### **Paleidimas:**
 
 Iš `build/` aplanko:
 
-./studentu_tests.exe
+.\studentu_tests.exe  paleidžia testus
+.\studentu_app.exe  paleidžia meniu su galimybėmis
 
----
+### Kokius rezultatus gauname?
+Pagrindinis programos meniu su visomis prieinamomis funkcijomis.
+![Meniu langas](images/meniu_app.png)
+
+Paleidus testavimus matome, kad visi parengti vienetų testai įvykdyti sėkmingai
+![Meniu langas](images/meniu_app.png)
+
 
 ## Doxygen dokumentacija
 
