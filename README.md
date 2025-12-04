@@ -16,7 +16,7 @@
 ## Releasų istorija
 
 | Versija | Pagrindiniai pakeitimai | Komentarai apie rezultatus |
-|--------|----------------|-------------------------|----------------------------|
+|--------|--------------------------|----------------------------|
 | v0.1   | Pirmoji pilnai veikianti versija su struktūra ir `std::vector`. | Ši versija suformavo meniu ir bazinę programos logiką. |
 | v0.2   | Sugeneruoti dideli testiniai failai (1 000 – 10 000 000 įrašų), įdiegta skirstymo į „vargšiukus“ ir „kietiakius“ logika. | Leido įvertinti, kaip keičiasi trukmė didėjant įrašų skaičiui. |
 | v0.3   | Pirmas veikiantis sprendimas su struktūra ir `std::vector`/`std::list`. Skaitymas iš failo, rikiavimas, skirstymas į dvi grupes, bazinis veikimo laiko matavimas. | Parodė, kad sprendimas korektiškai veikia su nedideliais failais, bet didėjant įrašų skaičiui pasimatė našumo problemos. |
@@ -89,6 +89,7 @@ cmake --build .
 Iš `build/` aplanko:
 
 .\studentu_tests.exe  paleidžia testus
+
 .\studentu_app.exe  paleidžia meniu su galimybėmis
 
 ### Kokius rezultatus gauname?
@@ -114,7 +115,7 @@ docs/html/index.html
 
 Atidarykite naršyklėje:
 
-- `C:\...\v_du_nulis\docs\html\index.html`
+- `C:/Users/Kompiuteris/Downloads/Naujas_isgit/v_du_nulis/docs/html/`
 
 ### Doxygen generuotos dokumentacijos pavyzdys
 
