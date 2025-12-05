@@ -6,12 +6,10 @@
 #include "Studentas.h"
 #include "mediana.h"
 #include "Skaiciavimai.h"
-
 #include <algorithm>
 #include <iostream>
-#include <limits>
 #include <sstream>
-#include <cstdlib>  // dėl std::rand
+#include <cstdlib> 
 
 // --- Rule of Three ---
 

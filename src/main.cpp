@@ -4,7 +4,6 @@
  */
 
 #include "Funkcijos.h"
-
 #include <algorithm>
 #include <chrono>
 #include <cstdlib>
@@ -13,7 +12,6 @@
 #include <iomanip>
 #include <iostream>
 #include <limits>
-#include <list>
 #include <sstream>
 
 int main() {
