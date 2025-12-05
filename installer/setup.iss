@@ -7,6 +7,7 @@
 #define MyAppDirName "VU\\Kevinas-Kuznecovas"
 
 [Setup]
+; Unikalus ID (gali palikti šitą)
 AppId={{A1B2C3D4-E5F6-47A8-90AB-1234567890AB}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
@@ -26,7 +27,17 @@ SolidCompression=yes
 PrivilegesRequired=admin
 
 [Files]
-; ČIA SVARBU: pataisyk kelią iki savo exe ir dll.
-; Jei po CMake turi build\studentu_app.exe ir build\Skaiciavimai.dll, naudok taip:
+; build katalogas yra vienu lygiu aukščiau už installer, todėl reikia ..\build\...
+Source: "..\build\studentu_app.exe";    DestDir: "{app}"; Flags: ignoreversion
+Source: "..\build\libSkaiciavimai.dll"; DestDir: "{app}"; Flags: ignoreversion
 
-Source: "build\studentu_app.exe"; De_
+[Icons]
+; Start Menu nuoroda
+Name: "{group}\Studentų rūšiavimo sistema"; Filename: "{app}\{#MyAppExeName}"
+
+; Darbalaukio nuoroda
+Name: "{commondesktop}\Studentų rūšiavimo sistema"; Filename: "{app}\{#MyAppExeName}"
+
+[Run]
+; Paleisti programą po diegimo
+Filename: "{app}\{#MyAppExeName}"; Description: "Paleisti programą dabar"; Flags: nowait postinstall skipifsilent
