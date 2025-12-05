@@ -121,6 +121,12 @@ public:
     /**
      * @brief Apskaičiuoja galutinį balą pagal pasirinktą strategiją.
      *
+     * Skaičiavimo formulė:
+     *      0.4 * strategy(nd_) + 0.6 * egzaminas_
+     *
+     * Galutinio balo skaičiavimas deleguojamas funkcijai
+     * `skaiciuotiGalutiniBala` iš atskiro DLL modulio.
+     *
      * @param strategy Funkcija, kuri iš pažymių vektoriaus grąžina vieną reikšmę
      * (vidurkį, medianą ir pan.). Jei nepateikta, naudojama mediana.
      *

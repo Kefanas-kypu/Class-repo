@@ -5,10 +5,13 @@
 
 #include "Studentas.h"
 #include "mediana.h"
+#include "Skaiciavimai.h"
+
 #include <algorithm>
 #include <iostream>
 #include <limits>
 #include <sstream>
+#include <cstdlib>  // dėl std::rand
 
 // --- Rule of Three ---
 
@@ -61,12 +64,16 @@ double Studentas::mediana(const std::vector<double>& paz) {
 }
 
 double Studentas::galBalas(
-    double (*strategy)(const std::vector<double>&)) const {
+    double (*strategy)(const std::vector<double>&)) const
+{
     if (!strategy)
         strategy = Studentas::mediana;
 
     double ndRez = nd_.empty() ? 0.0 : strategy(nd_);
-    return 0.4 * ndRez + 0.6 * egzaminas_;
+
+    // Čia vietoje "tiesioginės" formulės kviečiame DLL funkciją.
+    // Tai yra vieta, kurią dėstytojas gali klausti apie DLL panaudojimą.
+    return skaiciuotiGalutiniBala(ndRez, egzaminas_);
 }
 
 // --- Skaitymas ---
