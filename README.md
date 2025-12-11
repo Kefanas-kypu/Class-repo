@@ -82,9 +82,8 @@
 
 ---
 
-## Projekto struktūra (pavyzdys)
+## Projekto struktūra
 
-```txt
 projektas/
 ├── src/
 │   ├── main.cpp
@@ -104,9 +103,8 @@ projektas/
 ├── CMakeLists.txt
 ├── Doxyfile
 ├── setup.iss             
-└── README.me
+└── README.md
 
-```
 
 ## Programos paleidimas
 
@@ -160,7 +158,7 @@ docs/html/index.html
 
 Atidarykite naršyklėje:
 
-- `C:/Users/Kompiuteris/Downloads/Naujas_isgit/v_du_nulis/docs/html/`
+- `C:/Users/Kompiuteris/Downloads/Naujas_isgit/v_trys_nulis/docs/html/`
 
 ### Doxygen generuotos dokumentacijos pavyzdys
 
@@ -194,10 +192,40 @@ galBalas(Studentas::vidurkis)
 galBalas(Studentas::mediana)
 
 ### Studentų skirstymas į grupes  
-- ≥5 — *kietiakiai*
-- <5 — *vargšiukai*
+- ≥5 — kietiakiai
+- <5 — vargšiukai
 
 ### Failų generavimas  
 
 generuotiFaila(nd_count, kiekis)
 
+Sugeneruojami failai:
+
+- studentai_10000.txt
+- studentai_100000.txt
+- studentai_1000000.txt
+- studentai_1000000.txt
+- studentai_10000000.txt
+
+## Atliktos OOP ir projekto užduoties dalys 
+
+- Paveldėjimas iš abstraktinės bazinės klasės `Zmogus` (polimorfizmas per virtualias funkcijas)  
+- **Rule of Three** klasėje `Studentas` (kopijavimo konstruktorius, priskyrimo operatorius, destruktorius)  
+- Strategijos šablonas galutinio balo skaičiavimui (`galBalas(Studentas::vidurkis)` / `galBalas(Studentas::mediana)`)  
+- Pagrindinė logika išskirta į atskirą dinaminę **DLL biblioteką `Skaiciavimai`** (galutinio balo skaičiavimas per išorinę biblioteką)  
+- Vienetų testai su **Catch2** (paleidžiami per CTest), tikrinant pagrindines funkcijas ir klasių elgseną  
+- Projektas sukonfigūruotas per **CMake** (atskira biblioteka + vykdomoji programa + testų taikinys)  
+- Automatinė dokumentacija su **Doxygen** (HTML tinklalapis su klasių ir funkcijų aprašymais)  
+- Studentų rikiavimas, skirstymas į grupes ir veikimo laiko matavimas su skirtingo dydžio failais  
+- Parengta **Windows diegimo programa** su Inno Setup (`setup.iss`), leidžianti patogiai įdiegti galutinę v3.0 versiją
+
+## Išvados
+
+Projektas pilnai atitinka užduoties reikalavimus:
+
+- tvarkinga, plečiama architektūra
+- aiškiai išskaidytas kodas (klasės, DLL, testai)
+- vienetų testai paleidžiami be klaidų
+- galima atlikti našumo analizę su dideliais duomenų kiekiais
+- Doxygen dokumentacija pasiekiama kaip HTML tinklalapis
+- paruoštas diegimo paketas galutiniam vartotojui
