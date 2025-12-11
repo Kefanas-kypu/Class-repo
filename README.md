@@ -1,15 +1,18 @@
-# Studentų Rūšiavimo Sistema v2.0
+# Studentų Rūšiavimo Sistema v3.0
 
 Ši programa leidžia:
-- nuskaityti studentų duomenis,
-- skaičiuoti jų galutinius balus (pagal medianą arba vidurkį),
-- rūšiuoti ir skirstyti studentus į *kietiakius* ir *vargšiukus*,
-- generuoti atsitiktinius testinius failus,
-- atlikti automatinį našumo testavimą (iki 1 mln. studentų),
-- naudoti **paveldėjimą** (`Zmogus` → `Studentas`),
-- naudoti **Rule of Three** ir strategijos šabloną galutinio balo skaičiavimui,
-- automatiškai generuoti dokumentaciją su **Doxygen**,
-- paleisti vienetų testus (**Catch2**) su CTest.
+
+- nuskaityti studentų duomenis iš klaviatūros ir iš failų;
+- skaičiuoti galutinius balus (pagal **medianą** arba **vidurkį**, pasirenkama strategija);
+- rūšiuoti ir skirstyti studentus į *kietiakius* ir *vargšiukus*;
+- generuoti atsitiktinius testinius failus;
+- atlikti našumo testavimą su dideliais duomenų kiekiais;
+- naudoti **paveldėjimą** (`Zmogus` → `Studentas`);
+- naudoti **Rule of Three** ir strategijos šabloną galutinio balo skaičiavimui;
+- generuoti dokumentaciją su **Doxygen**;
+- paleisti vienetų testus su **Catch2** ir CTest;
+- **v3.0 nauja:** naudoti atskirą **DLL biblioteką `Skaiciavimai`** galutinio balo skaičiavimui;
+- **v3.0 nauja:** sukurti **Windows diegimo programą** (Inno Setup).
 
 ---
 
@@ -25,43 +28,85 @@
 | v1.2   | Pereita prie klasės `Studentas`, realizuotas **Rule of Three** (kopijavimo konstruktorius, priskyrimo operatorius, destruktorius). | Patikrinta, kad kopijavimas ir priskyrimas veikia korektiškai, programa stabiliai veikia su didesniais duomenų kiekiais. |
 | v1.5   | Įvesta abstrakti bazinė klasė `Zmogus`, iš jos paveldima `Studentas`. Pritaikytas paveldėjimas ir polimorfizmas. | Kodo struktūra tapo lengviau plečiama. Funkcionalumas išliko toks pats, bet OOP požiūriu kodas tapo tvarkingesnis. |
 | v2.0   | Pridėta Doxygen dokumentacija (HTML), sukonfigūruotas CMake projektas (biblioteka + vykdomoji programa), įdiegti vienetų testai su Catch2, sutvarkytas README su instrukcijomis ir nuotraukomis. | Vienetų testai rodo, kad pagrindinės funkcijos veikia teisingai. Doxygen tinklalapyje aiškiai matoma klasės struktūra ir funkcijų aprašymai. |
+| v3.0   | Pridėta atskira DLL biblioteka `Skaiciavimai` ir Windows diegimo programa (Inno Setup). | Galutinis balas skaičiuojamas per išorinę dinaminę biblioteką, o projektas pateikiamas kaip pilnai įdiegiama programa. |
+
+---
 
 ## Naudojamos technologijos
 
-| Funkcija | Sprendimas |
-|---------|------------|
-| Dokumentacija | **Doxygen** |
-| Vienetų testai | **Catch2 + CTest** |
-| Kodo organizavimas | **CMake** |
-| OOP principai | Paveldėjimas, Rule of Three, polimorfizmas |
-| Strategijos šablonas | Pasirenkamas balo skaičiavimo metodas |
+| Funkcija            | Sprendimas                     |
+|---------------------|--------------------------------|
+| Dokumentacija       | **Doxygen**                    |
+| Vienetų testai      | **Catch2 + CTest**             |
+| Kodo organizavimas  | **CMake**                      |
+| Dinaminė biblioteka | **DLL `Skaiciavimai`**         |
+| Diegimo paketas     | **Inno Setup (`setup.iss`)**   |
+| OOP principai       | Paveldėjimas, Rule of Three    |
+| Strategijos šablonas| Pasirenkamas balo skaičiavimo metodas |
 
 ---
 
 ## Programos architektūra
 
-### `Zmogus` (abstrakti klasė)
-- Turi `vardas_`, `pavarde_`
-- Abstraktūs metodai: `vardas()`, `pavarde()`, `info()`
-- Pagrindas paveldėjimui
+### `Zmogus` (abstrakti žmogaus klasė)
 
-### `Studentas` (paveldi Zmogus)
+- Laukai: `vardas_`, `pavarde_`;
+- Abstraktūs metodai: `vardas()`, `pavarde()`, `info()`;
+- Bazė visoms „žmogaus“ tipo klasėms (šiuo metu – `Studentas`).
+
+### `Studentas` (paveldi `Zmogus`)
+
 - Laiko:
-  - namų darbų pažymius
-  - egzamino balą
+  - namų darbų pažymių vektorių (`std::vector<double> nd_`);
+  - egzamino balą (`double egzaminas_`);
 - Implementuoja:
-  - **Rule of Three** (copy ctor, assignment operator, destructor)
-  - strategijos funkciją: `galBalas(strategy)`
-  - `readStudent()` – skaito duomenis iš failo arba interaktyviai
+  - **Rule of Three** (kopijavimo konstruktorius, priskyrimo operatorius, destruktorius);
+  - strategijos funkciją: `double galBalas(strategy)` (vidurkis / mediana);
+  - `readStudent()` – skaito duomenis iš failo arba interaktyviai.
+
+### DLL biblioteka `Skaiciavimai`
+
+- Atskirame projekte realizuota dinaminė biblioteka;
+- Eksportuoja funkcijas, kurios:
+  - priima pažymių vektorių ir egzamino balą;
+  - grąžina galutinį balą;
+- Pagrindinė programa vietoje tiesioginio skaičiavimo kreipiasi į `Skaiciavimai.dll`.
 
 ### Pagalbinės funkcijos (`Funkcijos.h/.cpp`)
-- studentų rūšiavimas
-- failų generavimas
-- rezultatų išvedimas
-- padalinimas į grupes
-- našumo testavimas
+
+- studentų rūšiavimas ir spausdinimas;
+- atsitiktinių studentų failų generavimas;
+- nuskaitymas iš failo;
+- skirstymas į kietiakius ir vargšiukus;
+- našumo testavimas su skirtingo dydžio failais.
 
 ---
+
+## Projekto struktūra (pavyzdys)
+
+```txt
+projektas/
+├── src/
+│   ├── main.cpp
+│   ├── Studentas.cpp
+│   ├── Zmogus.cpp
+│   └── Funkcijos.cpp
+├── include/
+│   ├── Studentas.h
+│   ├── Zmogus.h
+│   ├── Funkcijos.h
+│   └── mediana.h
+├── Skaiciavimai/       
+├── tests/
+│   └── test_studentas.cpp
+├── docs/               
+├── images/              
+├── CMakeLists.txt
+├── Doxyfile
+├── setup.iss             
+└── README.me
+
+```
 
 ## Programos paleidimas
 
@@ -156,27 +201,3 @@ galBalas(Studentas::mediana)
 
 generuotiFaila(nd_count, kiekis)
 
----
-
-## Atliktos OOP užduoties dalys
-
-- Paveldėjimas iš abstraktinės bazinės klasės  
-- Rule of Three  
-- Strategijos šablonas  
-- APK testai naudojant Catch2  
-- CMake projektas  
-- Automatinė dokumentacija  
-- Rikiavimas ir padalijimas  
-- Veikimo laiko matavimas
-
----
-
-## Išvados
-
-Projektas pilnai atitinka visus reikalavimus:
-
-- tvarkinga architektūra
-- aiškiai išskaidytas kodas
-- testai paleidžiami be klaidų
-- galima našumo analizė
-- Doxygen dokumentacija pasiekiama kaip HTML tinklalapis
